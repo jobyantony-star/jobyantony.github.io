@@ -1,450 +1,831 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joby Konni — Actor, Vlogger & Founder of Konni Varthakal</title>
-<meta name="description" content="Official portfolio of Joby Konni — actor, vlogger, media personality and founder of Konni Varthakal. Films, stage performances, and media work.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joby Konni — Actor · Vlogger · Mimicry Artist · Founder, Konni Varthakal</title>
+<meta name="description" content="Joby Konni — Actor, Vlogger, Mimicry Artist, Stage Programme Coordinator, Visual Editor & Founder of Konni Varthakal. Stories. Performances. Moments that stay forever." />
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- ===== FILM FRAME INDEX — signature element, ticks through reel numbers as user scrolls ===== -->
-<div class="frame-index" aria-hidden="true">
-  <span class="frame-index__label">FRAME</span>
-  <span class="frame-index__num" id="frameNum">001</span>
-  <span class="frame-index__total">/ 012</span>
-</div>
-
-<!-- ===== LOADER ===== -->
-<div class="loader" id="loader">
-  <div class="loader__marquee">
-    <span>KONNI VARTHAKAL — JOBY KONNI — ACTOR — VLOGGER — MEDIA PERSONALITY — </span>
-    <span>KONNI VARTHAKAL — JOBY KONNI — ACTOR — VLOGGER — MEDIA PERSONALITY — </span>
-  </div>
-  <div class="loader__count" id="loaderCount">00</div>
-</div>
-
-<!-- ===== NAV ===== -->
-<header class="nav" id="nav">
-  <a href="#top" class="nav__mark">JK</a>
-  <nav class="nav__links">
-    <a href="#about" data-hover="About">About</a>
-    <a href="#films" data-hover="Films">Films</a>
-    <a href="#timeline" data-hover="Journey">Journey</a>
-    <a href="#gallery" data-hover="Gallery">Gallery</a>
-    <a href="#contact" data-hover="Contact">Contact</a>
-  </nav>
-  <div class="nav__actions">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <span class="theme-toggle__dot"></span>
-    </button>
-    <a href="#contact" class="btn btn--small btn--outline">Book Now</a>
-  </div>
-  <button class="nav__burger" id="burger" aria-label="Open menu"><span></span></button>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about">About</a>
-  <a href="#films">Films</a>
-  <a href="#timeline">Journey</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<main id="top">
-
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__shape hero__shape--1"></div>
-      <div class="hero__shape hero__shape--2"></div>
-      <svg class="hero__grain" width="0" height="0"></svg>
-    </div>
-
-    <div class="hero__portrait" id="heroPortrait">
-      <div class="hero__portrait-frame">
-        <div class="hero__portrait-placeholder">
-          <span>Portrait of<br>Joby Konni</span>
-          <small> /assets/hero-portrait.jpeg </small>
-        </div>
-      </div>
-      <div class="hero__reel-tag">EST. 2016 — CINEMA</div>
-    </div>
-
-    <div class="hero__content">
-      <p class="eyebrow reveal-up">Konni Varthakal Presents</p>
-      <h1 class="hero__title">
-        <span class="reveal-up" style="--d:0">JOBY</span>
-        <span class="reveal-up" style="--d:1">KONNI</span>
-      </h1>
-      <p class="hero__role reveal-up" style="--d:2">Actor <span class="dot">•</span> Vlogger <span class="dot">•</span> Founder of Konni Varthakal</p>
-      <p class="hero__intro reveal-up" style="--d:3">“I believe every performance tells a story. From cinema to stage, every moment becomes a memory.”</p>
-      <div class="hero__cta reveal-up" style="--d:4">
-        <a href="#showreel" class="btn btn--primary magnetic"><span>Watch Showreel</span></a>
-        <a href="#contact" class="btn btn--ghost magnetic"><span>Book for Events</span></a>
-      </div>
-    </div>
-
-    <div class="hero__scroll">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ===== MARQUEE STRIP ===== -->
-  <div class="marquee">
-    <div class="marquee__track">
-      <span>Actor&nbsp;&nbsp;✦&nbsp;&nbsp;Vlogger&nbsp;&nbsp;✦&nbsp;&nbsp;Mimicry Artist&nbsp;&nbsp;✦&nbsp;&nbsp;Stage Coordinator&nbsp;&nbsp;✦&nbsp;&nbsp;Visual Editor&nbsp;&nbsp;✦&nbsp;&nbsp;Founder, Konni Varthakal&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
-      <span>Actor&nbsp;&nbsp;✦&nbsp;&nbsp;Vlogger&nbsp;&nbsp;✦&nbsp;&nbsp;Mimicry Artist&nbsp;&nbsp;✦&nbsp;&nbsp;Stage Coordinator&nbsp;&nbsp;✦&nbsp;&nbsp;Visual Editor&nbsp;&nbsp;✦&nbsp;&nbsp;Founder, Konni Varthakal&nbsp;&nbsp;✦&nbsp;&nbsp;</span>
-    </div>
-  </div>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="about" id="about">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">01 — About</p>
-      <h2 class="reveal-up">A performer at home <br>in front of any lens.</h2>
-    </div>
-
-    <div class="about__grid">
-      <div class="about__bio reveal-up">
-        <p>Joby Konni is a Malayalam film actor, vlogger, and media personality whose work moves fluidly between cinema, stage, and screen. Since his debut in <em>Theekkuchiyum Panithulliyum</em> (2016), he has built a body of work defined by presence, timing, and an instinct for the moment that makes an audience lean in.</p>
-        <p>Beyond the camera, Joby is the founder and admin of <strong>Konni Varthakal</strong>, a media platform that has become a trusted voice for stories from Konni and beyond — blending journalism, entertainment, and community in equal measure.</p>
-        <a href="#contact" class="link-arrow">Get in touch <span>→</span></a>
-      </div>
-
-      <div class="about__roles">
-        <div class="role-item reveal-up"><span class="role-item__index">01</span><span class="role-item__name">Actor</span></div>
-        <div class="role-item reveal-up"><span class="role-item__index">02</span><span class="role-item__name">Vlogger</span></div>
-        <div class="role-item reveal-up"><span class="role-item__index">03</span><span class="role-item__name">Mimicry Artist</span></div>
-        <div class="role-item reveal-up"><span class="role-item__index">04</span><span class="role-item__name">Stage Programme Coordinator</span></div>
-        <div class="role-item reveal-up"><span class="role-item__index">05</span><span class="role-item__name">Visual Editor</span></div>
-        <div class="role-item reveal-up"><span class="role-item__index">06</span><span class="role-item__name">Founder, Konni Varthakal</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FILMOGRAPHY ===== -->
-  <section class="films" id="films">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">02 — Filmography</p>
-      <h2 class="reveal-up">On screen.</h2>
-    </div>
-
-    <div class="films__rail-wrap">
-      <div class="films__rail" id="filmsRail">
-
-        <article class="film-card reveal-up">
-          <div class="film-card__poster film-card__poster--1">
-            <span class="film-card__year">2016</span>
-          </div>
-          <div class="film-card__body">
-            <h3>Theekkuchiyum Panithulliyum</h3>
-            <p class="film-card__meta">2016 <span class="dot">•</span> Malayalam <span class="dot">•</span> Supporting Role</p>
-            <a href="#showreel" class="film-card__trailer">Watch Trailer <span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="film-card reveal-up">
-          <div class="film-card__poster film-card__poster--2">
-            <span class="film-card__year">2018</span>
-          </div>
-          <div class="film-card__body">
-            <h3>Ave Maria</h3>
-            <p class="film-card__meta">2018 <span class="dot">•</span> Malayalam <span class="dot">•</span> Featured Role</p>
-            <a href="#showreel" class="film-card__trailer">Watch Trailer <span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="film-card reveal-up">
-          <div class="film-card__poster film-card__poster--3">
-            <span class="film-card__year">2019</span>
-          </div>
-          <div class="film-card__body">
-            <h3>Prekashante Metro</h3>
-            <p class="film-card__meta">2019 <span class="dot">•</span> Malayalam <span class="dot">•</span> Featured Role</p>
-            <a href="#showreel" class="film-card__trailer">Watch Trailer <span>↗</span></a>
-          </div>
-        </article>
-
-        <article class="film-card reveal-up">
-          <div class="film-card__poster film-card__poster--4">
-            <span class="film-card__year">2025</span>
-          </div>
-          <div class="film-card__body">
-            <h3>Kalam Standard 5B</h3>
-            <p class="film-card__meta">2025 <span class="dot">•</span> Malayalam <span class="dot">•</span> Lead Role</p>
-            <a href="#showreel" class="film-card__trailer">Watch Trailer <span>↗</span></a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SHOWREEL ===== -->
-  <section class="showreel" id="showreel">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">03 — Showreel</p>
-      <h2 class="reveal-up">Watch the work.</h2>
-    </div>
-
-    <div class="showreel__grid">
-      <div class="reel-card reveal-up">
-        <div class="reel-card__frame">
-          <iframe data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Theekkuchiyum Panithulliyum" loading="lazy" allowfullscreen></iframe>
-          <button class="reel-card__play" aria-label="Play video"><span></span></button>
-        </div>
-        <p>Theekkuchiyum Panithulliyum <span class="dot">•</span> 2016</p>
-      </div>
-      <div class="reel-card reveal-up">
-        <div class="reel-card__frame">
-          <iframe data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Ave Maria" loading="lazy" allowfullscreen></iframe>
-          <button class="reel-card__play" aria-label="Play video"><span></span></button>
-        </div>
-        <p>Ave Maria <span class="dot">•</span> 2018</p>
-      </div>
-      <div class="reel-card reveal-up">
-        <div class="reel-card__frame">
-          <iframe data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Prekashante Metro" loading="lazy" allowfullscreen></iframe>
-          <button class="reel-card__play" aria-label="Play video"><span></span></button>
-        </div>
-        <p>Prekashante Metro <span class="dot">•</span> 2019</p>
-      </div>
-      <div class="reel-card reveal-up">
-        <div class="reel-card__frame">
-          <iframe data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Kalam Standard 5B" loading="lazy" allowfullscreen></iframe>
-          <button class="reel-card__play" aria-label="Play video"><span></span></button>
-        </div>
-        <p>Kalam Standard 5B <span class="dot">•</span> 2025</p>
-      </div>
-    </div>
-    <p class="showreel__note">Replace the placeholder YouTube IDs in script.js / data-src attributes with the real trailer links.</p>
-  </section>
-
-  <!-- ===== TIMELINE ===== -->
-  <section class="timeline" id="timeline">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">04 — Journey</p>
-      <h2 class="reveal-up">A decade, frame by frame.</h2>
-    </div>
-
-    <div class="timeline__track">
-      <div class="timeline__line"><div class="timeline__line-fill" id="timelineFill"></div></div>
-
-      <div class="timeline__item reveal-up">
-        <span class="timeline__year">2016</span>
-        <div class="timeline__content"><h4>Theekkuchiyum Panithulliyum</h4><p>Feature film debut, Malayalam cinema.</p></div>
-      </div>
-      <div class="timeline__item reveal-up">
-        <span class="timeline__year">2018</span>
-        <div class="timeline__content"><h4>Ave Maria</h4><p>Continued screen presence in an ensemble drama.</p></div>
-      </div>
-      <div class="timeline__item reveal-up">
-        <span class="timeline__year">2019</span>
-        <div class="timeline__content"><h4>Prekashante Metro</h4><p>A featured role exploring city life and character.</p></div>
-      </div>
-      <div class="timeline__item reveal-up">
-        <span class="timeline__year">2025</span>
-        <div class="timeline__content"><h4>Kalam Standard 5B</h4><p>A lead role marking a new creative chapter.</p></div>
-      </div>
-      <div class="timeline__item reveal-up">
-        <span class="timeline__year">Today</span>
-        <div class="timeline__content"><h4>Founder &amp; Admin, Konni Varthakal</h4><p>Building a media platform for stories that matter locally.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section class="services" id="services">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">05 — Services</p>
-      <h2 class="reveal-up">Ways to work together.</h2>
-    </div>
-
-    <div class="services__list">
-      <div class="service-row reveal-up">
-        <h3>Acting</h3>
-        <p>Film, short-form and character work across genres.</p>
-      </div>
-      <div class="service-row reveal-up">
-        <h3>Stage Performance</h3>
-        <p>Live hosting, appearances and scripted stage acts.</p>
-      </div>
-      <div class="service-row reveal-up">
-        <h3>Mimicry Artistry</h3>
-        <p>Voice, character mimicry for live shows and media.</p>
-      </div>
-      <div class="service-row reveal-up">
-        <h3>Visual Editing</h3>
-        <p>Video editing and visual storytelling for brands and creators.</p>
-      </div>
-      <div class="service-row reveal-up">
-        <h3>Event Coordination</h3>
-        <p>Programme planning and coordination for stage events.</p>
-      </div>
-      <div class="service-row reveal-up">
-        <h3>Content Creation</h3>
-        <p>Vlogs and original video content across platforms.</p>
-      </div>
-      <div class="service-row reveal-up">
-        <h3>Media Promotion</h3>
-        <p>Campaigns and coverage through Konni Varthakal.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== GALLERY ===== -->
-  <section class="gallery" id="gallery">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">06 — Gallery</p>
-      <h2 class="reveal-up">Moments, collected.</h2>
-    </div>
-
-    <div class="gallery__filters" id="galleryFilters">
-      <button class="filter-btn is-active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="movies">Movies</button>
-      <button class="filter-btn" data-filter="stage">Stage Shows</button>
-      <button class="filter-btn" data-filter="bts">Behind the Scenes</button>
-      <button class="filter-btn" data-filter="events">Events</button>
-      <button class="filter-btn" data-filter="media">Media</button>
-      <button class="filter-btn" data-filter="celebrity">Celebrity Moments</button>
-    </div>
-
-    <div class="gallery__grid" id="galleryGrid">
-      <div class="gallery__item" data-cat="movies"><div class="gallery__ph gallery__ph--1"><span>Movies</span></div></div>
-      <div class="gallery__item" data-cat="stage"><div class="gallery__ph gallery__ph--2"><span>Stage Shows</span></div></div>
-      <div class="gallery__item" data-cat="bts"><div class="gallery__ph gallery__ph--3"><span>Behind the Scenes</span></div></div>
-      <div class="gallery__item" data-cat="events"><div class="gallery__ph gallery__ph--4"><span>Events</span></div></div>
-      <div class="gallery__item" data-cat="media"><div class="gallery__ph gallery__ph--5"><span>Media</span></div></div>
-      <div class="gallery__item" data-cat="celebrity"><div class="gallery__ph gallery__ph--6"><span>Celebrity Moments</span></div></div>
-      <div class="gallery__item" data-cat="movies"><div class="gallery__ph gallery__ph--7"><span>Movies</span></div></div>
-      <div class="gallery__item" data-cat="stage"><div class="gallery__ph gallery__ph--8"><span>Stage Shows</span></div></div>
-      <div class="gallery__item" data-cat="events"><div class="gallery__ph gallery__ph--9"><span>Events</span></div></div>
-    </div>
-  </section>
-
-  <!-- ===== STATISTICS ===== -->
-  <section class="stats" id="stats">
-    <div class="stats__grid">
-      <div class="stat reveal-up">
-        <span class="stat__num" data-count="4">0</span>
-        <span class="stat__label">Movies</span>
-      </div>
-      <div class="stat reveal-up">
-        <span class="stat__num" data-count="60">0</span>
-        <span class="stat__label">Stage Shows</span>
-      </div>
-      <div class="stat reveal-up">
-        <span class="stat__num" data-count="9">0</span>
-        <span class="stat__label">Years Experience</span>
-      </div>
-      <div class="stat reveal-up">
-        <span class="stat__num" data-count="120">0</span>
-        <span class="stat__label">Events</span>
-      </div>
-      <div class="stat reveal-up">
-        <span class="stat__num" data-count="2" data-suffix="M+">0</span>
-        <span class="stat__label">Audience Reached</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials" id="testimonials">
-    <div class="section-head">
-      <p class="eyebrow reveal-up">07 — Words</p>
-      <h2 class="reveal-up">From the people he's worked with.</h2>
-    </div>
-
-    <div class="testimonials__track" id="testiTrack">
-      <div class="testi-card reveal-up">
-        <p>“Joby brings a rare stillness to set — he listens before he acts, and it shows on screen.”</p>
-        <span>Film Director</span>
-      </div>
-      <div class="testi-card reveal-up">
-        <p>“Dependable, prepared, and easy to work with across every stage of production.”</p>
-        <span>Producer</span>
-      </div>
-      <div class="testi-card reveal-up">
-        <p>“He coordinates a stage programme like he's performing on it — with full attention to detail.”</p>
-        <span>Event Organizer</span>
-      </div>
-      <div class="testi-card reveal-up">
-        <p>“Konni Varthakal feels personal because he makes it personal. That comes through in every video.”</p>
-        <span>Audience Review</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <div class="contact__cta">
-      <h2 class="reveal-up">Let's create something<br>memorable together.</h2>
-      <a href="#" class="btn btn--primary btn--large magnetic reveal-up"><span>Start a conversation</span></a>
-    </div>
-
-    <div class="contact__grid">
-      <a href="https://wa.me/910000000000" class="contact-item reveal-up" target="_blank" rel="noopener">
-        <span class="contact-item__label">WhatsApp</span>
-        <span class="contact-item__value">Message directly →</span>
-      </a>
-      <a href="tel:+910000000000" class="contact-item reveal-up">
-        <span class="contact-item__label">Phone</span>
-        <span class="contact-item__value">+91 00000 00000 →</span>
-      </a>
-      <a href="mailto:hello@jobykonni.com" class="contact-item reveal-up">
-        <span class="contact-item__label">Email</span>
-        <span class="contact-item__value">hello@jobykonni.com →</span>
-      </a>
-      <a href="https://instagram.com/framesbymikhaiel" class="contact-item reveal-up" target="_blank" rel="noopener">
-        <span class="contact-item__label">Instagram</span>
-        <span class="contact-item__value">@jobykonni →</span>
-      </a>
-      <a href="#" class="contact-item reveal-up" target="_blank" rel="noopener">
-        <span class="contact-item__label">Facebook</span>
-        <span class="contact-item__value">/jobykonni →</span>
-      </a>
-      <a href="#" class="contact-item reveal-up" target="_blank" rel="noopener">
-        <span class="contact-item__label">YouTube</span>
-        <span class="contact-item__value">Konni Varthakal →</span>
-      </a>
-      <div class="contact-item reveal-up contact-item--static">
-        <span class="contact-item__label">Location</span>
-        <span class="contact-item__value">Konni, Kerala, India</span>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer__top">
-    <span class="footer__mark">JOBY KONNI</span>
-    <div class="footer__socials">
-      <a href="#" aria-label="Instagram">Instagram</a>
-      <a href="#" aria-label="Facebook">Facebook</a>
-      <a href="#" aria-label="YouTube">YouTube</a>
-      <a href="#" aria-label="WhatsApp">WhatsApp</a>
-    </div>
-  </div>
-  <div class="footer__bottom">
-    <span>© 2026 Joby Konni. Konni Varthakal.</span>
-    <a href="#top">Back to top ↑</a>
-  </div>
-</footer>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
+
+<style>
+  :root{
+    --void:#0a0908;
+    --curtain:#3d0f14;
+    --curtain-soft:#241012;
+    --brass:#c6a15b;
+    --brass-soft:#9c8151;
+    --ivory:#ede6d6;
+    --ash:#948a7c;
+    --ember:#e85c2b;
+    --line: rgba(237,230,214,0.14);
+    --bg: var(--void);
+    --bg-card: var(--curtain-soft);
+    --text: var(--ivory);
+    --text-dim: var(--ash);
+    --border: var(--line);
+    --radius: 2px;
+  }
+  html.light{
+    --bg:#f3efe6;
+    --bg-card:#fbede7;
+    --text:#221c18;
+    --text-dim:#776e62;
+    --border: rgba(34,28,24,0.12);
+    --ivory:#221c18;
+    --void:#f3efe6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:auto;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope', sans-serif;
+    overflow-x:hidden;
+    cursor:none;
+    transition: background .5s ease, color .5s ease;
+  }
+  ::selection{ background:var(--brass); color:var(--void); }
+  a{color:inherit; text-decoration:none;}
+  .serif{ font-family:'Fraunces', serif; }
+  .mono{ font-family:'Space Mono', monospace; letter-spacing:0.04em; }
+
+  /* ---------- custom cursor ---------- */
+  .cursor-dot, .cursor-ring{
+    position:fixed; top:0; left:0; pointer-events:none; z-index:9999;
+    border-radius:50%; transform:translate(-50%,-50%);
+  }
+  .cursor-dot{ width:6px; height:6px; background:var(--brass); }
+  .cursor-ring{ width:34px; height:34px; border:1px solid var(--brass); opacity:0.6; transition: width .25s, height .25s, opacity .25s, border-color .25s; }
+  .cursor-ring.big{ width:64px; height:64px; opacity:0.9; background:rgba(198,161,91,0.08); }
+  @media (hover:none){ .cursor-dot,.cursor-ring{display:none;} body{cursor:auto;} }
+
+  /* ---------- loader ---------- */
+  #loader{
+    position:fixed; inset:0; background:var(--void); z-index:10000;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:var(--ivory);
+  }
+  #loader .count{ font-family:'Fraunces', serif; font-style:italic; font-size:clamp(4rem,14vw,9rem); font-weight:400; line-height:1; }
+  #loader .tag{ margin-top:1.2rem; font-family:'Space Mono',monospace; letter-spacing:0.35em; font-size:0.7rem; text-transform:uppercase; color:var(--brass); }
+  #loader .frame{
+    position:absolute; inset:28px; border:1px solid rgba(198,161,91,0.35); pointer-events:none;
+  }
+  #loader .frame::before, #loader .frame::after{
+    content:""; position:absolute; width:14px; height:14px; border:1px solid var(--brass);
+  }
+  #loader .frame::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  #loader .frame::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  /* ---------- scroll progress ---------- */
+  #scroll-progress{
+    position:fixed; top:0; left:0; height:2px; background:var(--brass); z-index:9998; width:0%;
+    box-shadow:0 0 8px rgba(198,161,91,0.6);
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:500;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 22px clamp(20px,5vw,64px);
+    mix-blend-mode:normal;
+  }
+  .logo-mark{
+    width:42px;height:42px;border:1px solid var(--brass); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-style:italic; font-size:1rem; color:var(--brass);
+    letter-spacing:0.02em;
+  }
+  nav.desktop-nav{ display:flex; gap:2.2rem; }
+  nav.desktop-nav a{
+    font-family:'Space Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.14em;
+    color:var(--text-dim); position:relative; padding-bottom:4px;
+  }
+  nav.desktop-nav a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--brass); transition:width .35s ease;
+  }
+  nav.desktop-nav a:hover{ color:var(--ivory); }
+  nav.desktop-nav a:hover::after{ width:100%; }
+  #theme-toggle{
+    border:1px solid var(--border); background:transparent; color:var(--text);
+    font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase;
+    padding:8px 14px; border-radius:20px; cursor:none;
+  }
+  .nav-actions{ display:flex; align-items:center; gap:16px; }
+  .burger{ display:none; }
+  @media (max-width: 900px){
+    nav.desktop-nav{ display:none; }
+  }
+
+  section{ position:relative; }
+  .eyebrow{
+    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase;
+    color:var(--brass); display:flex; align-items:center; gap:14px; margin-bottom:1.4rem;
+  }
+  .eyebrow::before{ content:""; width:34px; height:1px; background:var(--brass); display:inline-block; }
+
+  .wrap{ max-width:1280px; margin:0 auto; padding-left:clamp(20px,5vw,64px); padding-right:clamp(20px,5vw,64px); }
+
+  /* ---------- hero ---------- */
+  #hero{
+    min-height:100svh; display:flex; align-items:flex-end; overflow:hidden;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 18%, rgba(198,161,91,0.16), transparent 60%),
+      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(61,15,20,0.9), transparent 70%),
+      var(--void);
+  }
+  #hero .grain{
+    position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  #hero .spotlight{
+    position:absolute; top:-10%; left:50%; width:120vw; height:140vh; transform:translateX(-50%);
+    background:conic-gradient(from 200deg at 50% 0%, transparent 0deg, rgba(198,161,91,0.10) 8deg, transparent 20deg);
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; width:100%; padding:120px clamp(20px,5vw,64px) 64px; z-index:2; }
+  .hero-kicker{ display:flex; align-items:center; gap:14px; margin-bottom:1.6rem; }
+  .hero-kicker .dot{ width:8px;height:8px;border-radius:50%; background:var(--ember); box-shadow:0 0 10px var(--ember); }
+  .hero-kicker span{ font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--ash); }
+  h1.hero-title{
+    font-family:'Fraunces', serif; font-weight:400; font-style:italic;
+    font-size:clamp(3.4rem, 10.5vw, 9.5rem); line-height:0.92; letter-spacing:-0.01em; color:var(--ivory);
+  }
+  .hero-roles{
+    margin-top:1.6rem; display:flex; flex-wrap:wrap; gap:0.5rem 1.4rem; max-width:760px;
+    font-family:'Manrope',sans-serif; font-size:clamp(0.85rem,1.3vw,1.05rem); color:var(--text-dim);
+  }
+  .hero-roles span{ position:relative; padding-left:1.1rem; }
+  .hero-roles span::before{ content:"—"; position:absolute; left:0; color:var(--brass); }
+  .hero-intro{ margin-top:2.2rem; max-width:520px; font-size:1.05rem; line-height:1.6; color:var(--text-dim); font-weight:300; }
+  .hero-cta{ margin-top:2.6rem; display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+  .btn{
+    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+    padding:16px 30px; border-radius:40px; display:inline-flex; align-items:center; gap:10px;
+    cursor:none; border:1px solid var(--brass); position:relative; overflow:hidden; white-space:nowrap;
+  }
+  .btn-primary{ background:var(--brass); color:var(--void); }
+  .btn-primary:hover{ background:transparent; color:var(--brass); }
+  .btn-ghost{ background:transparent; color:var(--ivory); border-color:var(--border); }
+  .btn-ghost:hover{ border-color:var(--brass); color:var(--brass); }
+  .btn span.play{ font-size:0.6rem; }
+  .scroll-cue{
+    position:absolute; right:clamp(20px,5vw,64px); bottom:40px; display:flex; flex-direction:column;
+    align-items:center; gap:10px; color:var(--ash); font-family:'Space Mono',monospace; font-size:0.65rem;
+    letter-spacing:0.2em; text-transform:uppercase;
+  }
+  .scroll-cue .line{ width:1px; height:60px; background:linear-gradient(var(--brass), transparent); position:relative; overflow:hidden; }
+  .scroll-cue .line::after{ content:""; position:absolute; top:-60px; left:0; width:100%; height:60px; background:var(--ivory); animation: dropline 2.2s ease-in-out infinite; }
+  @keyframes dropline{ to{ top:100%; } }
+
+  /* marquee ticker */
+  .marquee-wrap{ border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; padding:14px 0; background:var(--bg-card); }
+  .marquee-track{ display:flex; width:max-content; animation: scrollmarq 26s linear infinite; }
+  .marquee-track span{
+    font-family:'Fraunces',serif; font-style:italic; font-size:1.1rem; color:var(--text-dim); padding:0 2.4rem; white-space:nowrap;
+    display:flex; align-items:center; gap:2.4rem;
+  }
+  .marquee-track span::after{ content:"✦"; color:var(--brass); font-style:normal; font-size:0.8rem; }
+  @keyframes scrollmarq{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+
+  /* ---------- section titles ---------- */
+  .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-bottom:3.5rem; }
+  h2.big-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(2.2rem,5.2vw,4.2rem); line-height:1; letter-spacing:-0.01em; }
+  .section-num{ font-family:'Space Mono',monospace; font-size:0.8rem; color:var(--text-dim); text-align:right; }
+
+  section.act{ padding: 130px 0; border-bottom:1px solid var(--border); }
+
+  /* ---------- about ---------- */
+  #about .about-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:4rem; align-items:start; }
+  @media(max-width:860px){ #about .about-grid{ grid-template-columns:1fr; } }
+  #about p.lead{ font-family:'Fraunces',serif; font-size:clamp(1.3rem,2.4vw,1.9rem); line-height:1.45; font-weight:400; color:var(--ivory); }
+  #about p.body-text{ margin-top:1.6rem; color:var(--text-dim); line-height:1.8; font-size:1rem; font-weight:300; max-width:60ch; }
+  .role-chips{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border); margin-top:2rem; }
+  .role-chips .row{ display:flex; align-items:center; justify-content:space-between; padding:1.1rem 0; border-bottom:1px solid var(--border); }
+  .role-chips .row .n{ font-family:'Space Mono',monospace; color:var(--brass); font-size:0.75rem; }
+  .role-chips .row .t{ font-family:'Fraunces',serif; font-size:1.15rem; font-style:italic; }
+  .role-chips .row:hover{ padding-left:10px; transition:.3s; }
+
+  /* ---------- filmography ---------- */
+  .film-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:2.4rem; }
+  @media(max-width:860px){ .film-grid{ grid-template-columns:1fr; } }
+  .film-card{
+    border:1px solid var(--border); border-radius: var(--radius); overflow:hidden; background:var(--bg-card);
+    display:flex; flex-direction:column;
+  }
+  .film-poster{
+    aspect-ratio: 3/2; position:relative; overflow:hidden;
+    background: linear-gradient(155deg, var(--curtain), var(--void) 70%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .film-poster .initials{ font-family:'Fraunces',serif; font-style:italic; font-size:3.6rem; color:rgba(198,161,91,0.35); }
+  .film-poster .reel-lines{ position:absolute; inset:0; background-image: repeating-linear-gradient(90deg, rgba(198,161,91,0.06) 0 2px, transparent 2px 40px); }
+  .film-poster .year-badge{
+    position:absolute; top:16px; left:16px; font-family:'Space Mono',monospace; font-size:0.72rem;
+    color:var(--brass); border:1px solid rgba(198,161,91,0.5); padding:4px 10px; border-radius:20px; background:rgba(10,9,8,0.4);
+  }
+  .film-body{ padding:1.8rem; display:flex; flex-direction:column; gap:0.9rem; flex:1; }
+  .film-body h3{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:500; }
+  .film-langs{ font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); }
+  .film-desc{ color:var(--text-dim); font-size:0.92rem; line-height:1.6; font-weight:300; }
+  .film-links{ margin-top:auto; display:flex; flex-wrap:wrap; gap:0.7rem; padding-top:0.6rem; }
+  .film-link{
+    font-family:'Space Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase;
+    border:1px solid var(--border); padding:8px 14px; border-radius:20px; display:inline-flex; gap:8px; align-items:center;
+  }
+  .film-link:hover{ border-color:var(--brass); color:var(--brass); }
+
+  /* ---------- timeline (filmstrip) ---------- */
+  .filmstrip{ position:relative; padding-left:60px; }
+  .filmstrip::before{
+    content:""; position:absolute; left:20px; top:0; bottom:0; width:20px;
+    background-image:
+      repeating-linear-gradient(0deg, var(--brass) 0 6px, transparent 6px 26px);
+    -webkit-mask-image: linear-gradient(black,black);
+    opacity:0.55;
+  }
+  .filmstrip::after{
+    content:""; position:absolute; left:29px; top:0; bottom:0; width:2px; background:var(--border);
+  }
+  .tl-item{ position:relative; padding:0 0 4.2rem 40px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item .tl-dot{
+    position:absolute; left:24px; top:6px; width:13px; height:13px; border-radius:50%;
+    background:var(--void); border:2px solid var(--brass);
+  }
+  .tl-item .tl-year{ font-family:'Space Mono',monospace; color:var(--brass); font-size:0.85rem; }
+  .tl-item h4{ font-family:'Fraunces',serif; font-style:italic; font-size:1.7rem; margin-top:0.3rem; font-weight:400; }
+  .tl-item p{ margin-top:0.5rem; color:var(--text-dim); font-size:0.92rem; max-width:46ch; font-weight:300; }
+
+  /* ---------- services ---------- */
+  .service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+  @media(max-width:860px){ .service-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .service-grid{ grid-template-columns:1fr; } }
+  .service-card{ background:var(--bg); padding:2.6rem 2rem; transition:.35s ease; }
+  .service-card:hover{ background:var(--bg-card); }
+  .service-card .ic{ font-size:1.8rem; }
+  .service-card h4{ font-family:'Fraunces',serif; font-size:1.25rem; margin-top:1.2rem; font-weight:500; }
+  .service-card p{ margin-top:0.6rem; font-size:0.85rem; color:var(--text-dim); font-weight:300; line-height:1.6; }
+
+  /* ---------- gallery ---------- */
+  .filter-row{ display:flex; flex-wrap:wrap; gap:0.7rem; margin-bottom:2.6rem; }
+  .filter-btn{
+    font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase;
+    padding:9px 16px; border-radius:20px; border:1px solid var(--border); color:var(--text-dim);
+  }
+  .filter-btn.active, .filter-btn:hover{ border-color:var(--brass); color:var(--brass); }
+  .masonry{ column-count:3; column-gap:1.2rem; }
+  @media(max-width:900px){ .masonry{ column-count:2; } }
+  @media(max-width:560px){ .masonry{ column-count:1; } }
+  .g-item{ break-inside:avoid; margin-bottom:1.2rem; border-radius:var(--radius); overflow:hidden; position:relative; border:1px solid var(--border); cursor:none; }
+  .g-item .ph{
+    width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.6rem;
+    background:linear-gradient(160deg, var(--curtain), var(--void)); color:var(--ash); padding:2.4rem 1rem;
+  }
+  .g-item .ph .tag{ font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); }
+  .g-item .ph .ic{ font-size:1.6rem; }
+  .g-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.55), transparent 50%); opacity:0; transition:.3s; }
+  .g-item:hover::after{ opacity:1; }
+  .g-item .label{
+    position:absolute; bottom:14px; left:14px; font-family:'Space Mono',monospace; font-size:0.66rem;
+    letter-spacing:0.08em; text-transform:uppercase; opacity:0; transform:translateY(6px); transition:.3s; color:var(--ivory);
+  }
+  .g-item:hover .label{ opacity:1; transform:translateY(0); }
+
+  #lightbox{ position:fixed; inset:0; background:rgba(10,9,8,0.94); z-index:2000; display:none; align-items:center; justify-content:center; }
+  #lightbox .box{ max-width:640px; width:90%; background:var(--curtain-soft); border:1px solid var(--border); padding:3rem; text-align:center; }
+  #lightbox .close{ position:absolute; top:30px; right:clamp(20px,5vw,64px); font-family:'Space Mono',monospace; letter-spacing:0.1em; text-transform:uppercase; font-size:0.75rem; color:var(--ivory); }
+
+  /* ---------- achievements ---------- */
+  .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
+  @media(max-width:860px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } }
+  .stat{ border-top:1px solid var(--border); padding-top:1.4rem; }
+  .stat .num{ font-family:'Fraunces',serif; font-style:italic; font-size:clamp(2.6rem,5vw,4rem); color:var(--brass); line-height:1; }
+  .stat .lbl{ margin-top:0.6rem; font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); }
+
+  /* ---------- konni varthakal ---------- */
+  #kv{ background: linear-gradient(180deg, var(--curtain-soft), var(--void)); }
+  .kv-panel{ border:1px solid var(--border); padding:clamp(2rem,5vw,4.5rem); position:relative; }
+  .kv-panel .mark{ font-family:'Fraunces',serif; font-style:italic; font-size:clamp(2.4rem,5vw,4rem); }
+  .kv-panel p{ max-width:65ch; margin-top:1.4rem; color:var(--text-dim); line-height:1.8; font-weight:300; }
+  .kv-socials{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.4rem; }
+  .kv-social{
+    display:flex; align-items:center; gap:10px; border:1px solid var(--border); padding:14px 22px; border-radius:40px;
+    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
+  }
+  .kv-social:hover{ border-color:var(--brass); color:var(--brass); }
+
+  /* personal social cards */
+  .social-cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+  @media(max-width:700px){ .social-cards{ grid-template-columns:1fr; } }
+  .social-card{
+    border:1px solid var(--border); padding:2.2rem; display:flex; align-items:center; justify-content:space-between;
+    position:relative; overflow:hidden;
+  }
+  .social-card::before{
+    content:""; position:absolute; inset:0; background:var(--brass); transform:translateY(101%); transition:.4s ease; z-index:0;
+  }
+  .social-card:hover::before{ transform:translateY(0); }
+  .social-card .sc-text{ position:relative; z-index:1; }
+  .social-card:hover .sc-text{ color:var(--void); }
+  .social-card .sc-name{ font-family:'Fraunces',serif; font-style:italic; font-size:1.4rem; }
+  .social-card .sc-handle{ font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--text-dim); margin-top:0.3rem; }
+  .social-card:hover .sc-handle{ color:rgba(10,9,8,0.6); }
+  .social-card .arrow{ position:relative; z-index:1; font-size:1.4rem; transition:.3s; }
+  .social-card:hover .arrow{ transform:translate(6px,-6px); color:var(--void); }
+
+  /* ---------- contact / finale ---------- */
+  #contact{ padding:150px 0 90px; text-align:center; position:relative; overflow:hidden; }
+  #contact .glow{ position:absolute; top:-20%; left:50%; transform:translateX(-50%); width:900px; height:600px; background:radial-gradient(ellipse, rgba(198,161,91,0.18), transparent 65%); pointer-events:none; }
+  #contact h2{ font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:clamp(2.4rem,7vw,6rem); line-height:1.05; max-width:16ch; margin:0 auto; position:relative; z-index:1; }
+  .contact-cta-row{ display:flex; justify-content:center; gap:1rem; margin-top:2.6rem; flex-wrap:wrap; position:relative; z-index:1; }
+  .contact-links{ display:flex; justify-content:center; gap:2rem; margin-top:3.4rem; flex-wrap:wrap; position:relative; z-index:1; }
+  .contact-links a{ font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); }
+  .contact-links a:hover{ color:var(--brass); }
+
+  footer{ padding:2.4rem clamp(20px,5vw,64px); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-family:'Space Mono',monospace; font-size:0.66rem; color:var(--text-dim); letter-spacing:0.06em; text-transform:uppercase; }
+
+  .reveal{ opacity:0; transform:translateY(36px); }
+
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation:none; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="frame"></div>
+  <div class="count mono">03</div>
+  <div class="tag">Konni Varthakal Presents</div>
+</div>
+
+<div id="scroll-progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<header>
+  <a href="#hero" class="logo-mark">JK</a>
+  <nav class="desktop-nav">
+    <a href="#about">About</a>
+    <a href="#filmography">Filmography</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#kv">Konni Varthakal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button id="theme-toggle">Night</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="grain"></div>
+  <div class="spotlight"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker"><span class="dot"></span><span>Actor · Vlogger · Media Personality</span></div>
+    <h1 class="hero-title">Joby Konni</h1>
+    <div class="hero-roles">
+      <span>Actor</span>
+      <span>Vlogger</span>
+      <span>Mimicry Artist</span>
+      <span>Stage Programme Coordinator</span>
+      <span>Visual Editor</span>
+      <span>Founder, Konni Varthakal</span>
+    </div>
+    <p class="hero-intro">I bring stories to life through cinema, stage performances, visual storytelling, and digital media.</p>
+    <div class="hero-cta">
+      <a href="https://youtu.be/BzKYeqjE8QI" target="_blank" class="btn btn-primary"><span class="play">▶</span> Watch Showreel</a>
+      <a href="#contact" class="btn btn-ghost">Book for Events</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track mono">
+    <span>Stories. Performances. Moments that stay forever.</span>
+    <span>Stories. Performances. Moments that stay forever.</span>
+    <span>Stories. Performances. Moments that stay forever.</span>
+    <span>Stories. Performances. Moments that stay forever.</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="act" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Act I — The Performer</div>
+        <h2 class="big-title reveal">About Joby</h2>
+      </div>
+      <div class="section-num">01 / 06</div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p class="lead reveal">From village stage programmes to the big screen — a journey built one performance at a time.</p>
+        <p class="body-text reveal">Joby Konni's story begins where most Kerala performers' stories begin: on a stage, in front of a live audience that forgives nothing and rewards everything. Years of mimicry shows and programme coordination sharpened an instinct for timing, character, and audience — instincts that carried directly onto film sets in Theekkuchiyum Panithulliyum, Ave Maria, Prekashante Metro, and Kalam Standard 5B.</p>
+        <p class="body-text reveal">Alongside acting, Joby edits his own visual work, runs a growing vlog, and founded Konni Varthakal — a local media platform built to give his community's stories a home online. Every role feeds the others: the stage informs the screen, the screen informs the edit, and the edit informs the newsroom.</p>
+      </div>
+      <div class="role-chips reveal">
+        <div class="row"><span class="n">01</span><span class="t">Actor</span></div>
+        <div class="row"><span class="n">02</span><span class="t">Vlogger</span></div>
+        <div class="row"><span class="n">03</span><span class="t">Mimicry Artist</span></div>
+        <div class="row"><span class="n">04</span><span class="t">Stage Programme Coordinator</span></div>
+        <div class="row"><span class="n">05</span><span class="t">Visual &amp; Video Editor</span></div>
+        <div class="row"><span class="n">06</span><span class="t">Founder, Konni Varthakal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILMOGRAPHY -->
+<section class="act" id="filmography">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Act II — On Screen</div>
+        <h2 class="big-title reveal">Filmography</h2>
+      </div>
+      <div class="section-num">02 / 06</div>
+    </div>
+    <div class="film-grid">
+
+      <div class="film-card reveal">
+        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2016</span><span class="initials">TP</span></div>
+        <div class="film-body">
+          <h3>Theekkuchiyum Panithulliyum</h3>
+          <div class="film-langs">Tamil · Malayalam</div>
+          <p class="film-desc">Joby's debut screen appearance, carrying the timing and warmth of years on stage into a new medium.</p>
+          <div class="film-links">
+            <a class="film-link" href="https://youtu.be/BzKYeqjE8QI?si=Hy2iPgJ5tLEiXtI3" target="_blank">▶ Watch Full Movie</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="film-card reveal">
+        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2018</span><span class="initials">AM</span></div>
+        <div class="film-body">
+          <h3>Ave Maria</h3>
+          <div class="film-langs">Tamil · Malayalam</div>
+          <p class="film-desc">A quieter, character-driven role that showed a more restrained side of Joby's range.</p>
+          <div class="film-links">
+            <a class="film-link" href="https://youtu.be/4ZDsw6gb1S4?si=jpsLnliRZ8621iVg" target="_blank">▶ Watch Official Video</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="film-card reveal">
+        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2019</span><span class="initials">PM</span></div>
+        <div class="film-body">
+          <h3>Prekashante Metro</h3>
+          <div class="film-langs">Malayalam</div>
+          <p class="film-desc">A city-set feature that marked a step up in screen time and visibility.</p>
+          <div class="film-links">
+            <a class="film-link" href="https://youtu.be/CtQB-HY2KRI?si=dKh2YJXAwtGw1Q4w" target="_blank">▶ Official Trailer</a>
+            <a class="film-link" href="https://youtu.be/-7_Xl85M9QU?si=CtyahRBc2mzn0P3W" target="_blank">▶ Official Teaser</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="film-card reveal">
+        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2025</span><span class="initials">K5B</span></div>
+        <div class="film-body">
+          <h3>Kalam Standard 5B</h3>
+          <div class="film-langs">Hindi · Malayalam · Tamil</div>
+          <p class="film-desc">Joby's most ambitious project yet, releasing across three languages.</p>
+          <div class="film-links">
+            <a class="film-link" href="https://youtu.be/-3mJtEZY0k4?si=ljt3e2NJi8leMVLR" target="_blank">▶ Official Trailer</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="act" id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Act III — The Reel</div>
+        <h2 class="big-title reveal">Experience Timeline</h2>
+      </div>
+      <div class="section-num">03 / 06</div>
+    </div>
+    <div class="filmstrip">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year mono">2016</div>
+        <h4>Theekkuchiyum Panithulliyum</h4>
+        <p>Screen debut — Tamil &amp; Malayalam.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year mono">2018</div>
+        <h4>Ave Maria</h4>
+        <p>A second feature, expanding range — Tamil &amp; Malayalam.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year mono">2019</div>
+        <h4>Prekashante Metro</h4>
+        <p>A Malayalam feature with trailer and teaser released.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year mono">2025</div>
+        <h4>Kalam Standard 5B</h4>
+        <p>A trilingual release — Hindi, Malayalam &amp; Tamil.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-year mono">Ongoing</div>
+        <h4>Founder &amp; Admin, Konni Varthakal</h4>
+        <p>Building a home for local news and community stories online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="act" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Act IV — What I Offer</div>
+        <h2 class="big-title reveal">Services</h2>
+      </div>
+      <div class="section-num">04 / 06</div>
+    </div>
+  </div>
+  <div class="service-grid">
+    <div class="service-card reveal"><div class="ic">🎭</div><h4>Acting</h4><p>Feature films, shorts, and character roles across Malayalam, Tamil, and Hindi cinema.</p></div>
+    <div class="service-card reveal"><div class="ic">🎤</div><h4>Mimicry Shows</h4><p>Live mimicry and comic performances built for stage audiences.</p></div>
+    <div class="service-card reveal"><div class="ic">🎪</div><h4>Stage Programmes</h4><p>End-to-end coordination for cultural events and stage shows.</p></div>
+    <div class="service-card reveal"><div class="ic">🎬</div><h4>Visual Editing</h4><p>Video editing and post-production for film, vlog, and promotional work.</p></div>
+    <div class="service-card reveal"><div class="ic">📹</div><h4>Vlogging</h4><p>Behind-the-scenes and personal storytelling for digital audiences.</p></div>
+    <div class="service-card reveal"><div class="ic">📢</div><h4>Event Coordination</h4><p>Planning and hosting for community and cultural events.</p></div>
+    <div class="service-card reveal"><div class="ic">🎥</div><h4>Media Promotion</h4><p>Coverage and promotion through the Konni Varthakal platform.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="act" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Act V — In Frame</div>
+        <h2 class="big-title reveal">Gallery</h2>
+      </div>
+      <div class="section-num">05 / 06</div>
+    </div>
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="movies">Movies</button>
+      <button class="filter-btn" data-filter="stage">Stage Shows</button>
+      <button class="filter-btn" data-filter="bts">Behind the Scenes</button>
+      <button class="filter-btn" data-filter="celeb">Celebrity Moments</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+      <button class="filter-btn" data-filter="media">Media Coverage</button>
+    </div>
+    <div class="masonry" id="masonry"></div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="act" id="achievements">
+  <div class="wrap">
+    <div class="eyebrow">Act VI — By the Numbers</div>
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num" data-count="4">0</div><div class="lbl">Movies Worked</div></div>
+      <div class="stat reveal"><div class="num" data-count="150">0</div><div class="lbl">Stage Shows</div></div>
+      <div class="stat reveal"><div class="num" data-count="10">0</div><div class="lbl">Years of Experience</div></div>
+      <div class="stat reveal"><div class="num" data-count="500" data-suffix="K+">0</div><div class="lbl">Audience Reached</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KONNI VARTHAKAL -->
+<section class="act" id="kv">
+  <div class="wrap">
+    <div class="eyebrow">The Encore</div>
+    <div class="kv-panel reveal">
+      <div class="mark">Konni Varthakal</div>
+      <p>Founder and Admin of one of the leading local digital media platforms — delivering news, updates, and community stories for the people of Konni and beyond.</p>
+      <div class="kv-socials">
+        <a class="kv-social" href="https://www.facebook.com/share/1dLSZswdzh/" target="_blank">Facebook →</a>
+        <a class="kv-social" href="https://www.instagram.com/konni_varthakal" target="_blank">Instagram →</a>
+        <a class="kv-social" href="https://youtube.com/@konnivarthakal" target="_blank">YouTube →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL SOCIAL -->
+<section class="act" id="social">
+  <div class="wrap">
+    <div class="eyebrow">Follow Along</div>
+    <h2 class="big-title reveal" style="margin-bottom:2.4rem;">Joby, Off Stage</h2>
+    <div class="social-cards">
+      <a href="https://www.facebook.com/joby.konni" target="_blank" class="social-card reveal">
+        <div class="sc-text"><div class="sc-name">Facebook</div><div class="sc-handle">/joby.konni</div></div>
+        <div class="arrow">↗</div>
+      </a>
+      <a href="https://www.instagram.com/joby_konni" target="_blank" class="social-card reveal">
+        <div class="sc-text"><div class="sc-name">Instagram</div><div class="sc-handle">@joby_konni</div></div>
+        <div class="arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="glow"></div>
+  <div class="wrap">
+    <h2 class="reveal">Let's Create Something Memorable Together</h2>
+    <div class="contact-cta-row">
+      <a href="#" class="btn btn-primary">Book a Stage Show</a>
+      <a href="#" class="btn btn-ghost">Contact</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://wa.me/" target="_blank">WhatsApp</a>
+      <a href="https://www.facebook.com/joby.konni" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/joby_konni" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@konnivarthakal" target="_blank">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Joby Konni</span>
+  <span>Konni Varthakal · Actor · Vlogger · Mimicry Artist</span>
+</footer>
+
+<div id="lightbox">
+  <a class="close">Close ✕</a>
+  <div class="box">
+    <div class="mono" style="color:var(--brass); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;" id="lb-tag"></div>
+    <div class="serif" style="font-style:italic; font-size:1.8rem; margin-top:0.8rem;" id="lb-title"></div>
+    <p style="color:var(--text-dim); margin-top:0.8rem; font-size:0.9rem;">Replace this placeholder frame with the real photograph for this moment.</p>
+  </div>
+</div>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- loader (film countdown) ---------- */
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  const count = loader.querySelector('.count');
+  const seq = ['03','02','01'];
+  let i = 0;
+  const tl = gsap.timeline({ onComplete:() => {
+    gsap.to(loader, { autoAlpha:0, duration:0.7, ease:'power2.inOut', onComplete:()=> loader.style.display='none' });
+    document.body.style.cursor = 'none';
+    revealHero();
+  }});
+  seq.forEach((n) => {
+    tl.call(()=>{ count.textContent = n; })
+      .fromTo(count, { opacity:0, scale:0.8 }, { opacity:1, scale:1, duration:0.35, ease:'power2.out' })
+      .to(count, { opacity:0, scale:1.15, duration:0.3, ease:'power2.in' }, '+=0.25');
+  });
+});
+
+function revealHero(){
+  gsap.timeline()
+    .from('.hero-kicker', { y:20, opacity:0, duration:0.6, ease:'power3.out' })
+    .from('.hero-title', { y:60, opacity:0, duration:0.9, ease:'power3.out' }, '-=0.35')
+    .from('.hero-roles span', { y:14, opacity:0, duration:0.5, stagger:0.05, ease:'power2.out' }, '-=0.5')
+    .from('.hero-intro', { y:14, opacity:0, duration:0.5 }, '-=0.3')
+    .from('.hero-cta .btn', { y:14, opacity:0, duration:0.5, stagger:0.1 }, '-=0.3');
+}
+
+/* ---------- smooth scroll (Lenis) ---------- */
+let lenis;
+try{
+  lenis = new Lenis({ duration:1.1, smoothWheel:true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time)=>{ lenis.raf(time*1000); });
+  gsap.ticker.lagSmoothing(0);
+}catch(e){ /* fallback: native scroll */ }
+
+/* ---------- scroll progress ---------- */
+const progress = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop || document.body.scrollTop) / ((h.scrollHeight || document.body.scrollHeight) - h.clientHeight) * 100;
+  progress.style.width = pct + '%';
+});
+
+/* ---------- reveal animations ---------- */
+document.querySelectorAll('.reveal').forEach((el) => {
+  gsap.to(el, {
+    opacity:1, y:0, duration:0.9, ease:'power3.out',
+    scrollTrigger:{ trigger:el, start:'top 88%' }
+  });
+});
+
+/* ---------- custom cursor ---------- */
+const dot = document.querySelector('.cursor-dot');
+const ring = document.querySelector('.cursor-ring');
+window.addEventListener('mousemove', (e) => {
+  gsap.to(dot, { x:e.clientX, y:e.clientY, duration:0.05 });
+  gsap.to(ring, { x:e.clientX, y:e.clientY, duration:0.25, ease:'power2.out' });
+});
+document.querySelectorAll('a, button, .g-item').forEach((el) => {
+  el.addEventListener('mouseenter', () => ring.classList.add('big'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+});
+
+/* ---------- magnetic buttons ---------- */
+document.querySelectorAll('.btn, .social-card').forEach((btn) => {
+  btn.addEventListener('mousemove', (e) => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width/2;
+    const y = e.clientY - r.top - r.height/2;
+    gsap.to(btn, { x:x*0.18, y:y*0.3, duration:0.3, ease:'power2.out' });
+  });
+  btn.addEventListener('mouseleave', () => gsap.to(btn, { x:0, y:0, duration:0.4, ease:'elastic.out(1,0.4)' }));
+});
+
+/* ---------- theme toggle ---------- */
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+  document.documentElement.classList.toggle('light');
+  themeBtn.textContent = document.documentElement.classList.contains('light') ? 'Day' : 'Night';
+});
+
+/* ---------- counters ---------- */
+document.querySelectorAll('.num').forEach((el) => {
+  const target = parseInt(el.dataset.count, 10);
+  const suffix = el.dataset.suffix || '+';
+  ScrollTrigger.create({
+    trigger: el, start:'top 90%', once:true,
+    onEnter: () => {
+      let obj = { val:0 };
+      gsap.to(obj, {
+        val: target, duration:1.6, ease:'power2.out',
+        onUpdate: () => { el.textContent = Math.floor(obj.val) + suffix; }
+      });
+    }
+  });
+});
+
+/* ---------- gallery ---------- */
+const galleryData = [
+  { cat:'movies', icon:'🎬', label:'Theekkuchiyum Panithulliyum, 2016' },
+  { cat:'movies', icon:'🎬', label:'Ave Maria, 2018' },
+  { cat:'movies', icon:'🎬', label:'Prekashante Metro, 2019' },
+  { cat:'movies', icon:'🎬', label:'Kalam Standard 5B, 2025' },
+  { cat:'stage', icon:'🎤', label:'Mimicry Show, Live' },
+  { cat:'stage', icon:'🎪', label:'Stage Programme' },
+  { cat:'bts', icon:'🎥', label:'On Set' },
+  { cat:'bts', icon:'📹', label:'Editing Session' },
+  { cat:'celeb', icon:'✦', label:'With Fellow Artists' },
+  { cat:'events', icon:'📢', label:'Community Event' },
+  { cat:'events', icon:'🎪', label:'Cultural Programme' },
+  { cat:'media', icon:'📰', label:'Konni Varthakal Coverage' },
+];
+const heights = [220,280,240,300,260,230,310,250,270,240,290,260];
+const masonry = document.getElementById('masonry');
+galleryData.forEach((g, idx) => {
+  const div = document.createElement('div');
+  div.className = 'g-item';
+  div.dataset.cat = g.cat;
+  div.innerHTML = `<div class="ph" style="height:${heights[idx]}px;"><div class="ic">${g.icon}</div><div class="tag">${g.cat}</div></div><div class="label mono">${g.label}</div>`;
+  div.addEventListener('click', () => openLightbox(g));
+  masonry.appendChild(div);
+});
+document.querySelectorAll('.filter-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.g-item').forEach((item) => {
+      item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
+    });
+  });
+});
+const lightbox = document.getElementById('lightbox');
+function openLightbox(g){
+  document.getElementById('lb-tag').textContent = g.cat.toUpperCase();
+  document.getElementById('lb-title').textContent = g.label;
+  lightbox.style.display = 'flex';
+}
+document.querySelector('#lightbox .close').addEventListener('click', () => lightbox.style.display = 'none');
+lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.style.display = 'none'; });
+</script>
 </body>
 </html>
