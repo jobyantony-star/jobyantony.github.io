@@ -1,831 +1,908 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Joby Konni — Actor · Vlogger · Mimicry Artist · Founder, Konni Varthakal</title>
-<meta name="description" content="Joby Konni — Actor, Vlogger, Mimicry Artist, Stage Programme Coordinator, Visual Editor & Founder of Konni Varthakal. Stories. Performances. Moments that stay forever." />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joby Konni — Actor / Vlogger</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js"></script>
-
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --void:#0a0908;
-    --curtain:#3d0f14;
-    --curtain-soft:#241012;
-    --brass:#c6a15b;
-    --brass-soft:#9c8151;
-    --ivory:#ede6d6;
-    --ash:#948a7c;
-    --ember:#e85c2b;
-    --line: rgba(237,230,214,0.14);
-    --bg: var(--void);
-    --bg-card: var(--curtain-soft);
-    --text: var(--ivory);
-    --text-dim: var(--ash);
-    --border: var(--line);
-    --radius: 2px;
-  }
-  html.light{
-    --bg:#f3efe6;
-    --bg-card:#fbede7;
-    --text:#221c18;
-    --text-dim:#776e62;
-    --border: rgba(34,28,24,0.12);
-    --ivory:#221c18;
-    --void:#f3efe6;
+    --forest:#16302A;
+    --forest-deep:#0A1815;
+    --ivory:#F3ECDD;
+    --ivory-dim:#E8DFC9;
+    --gold:#A9772E;
+    --gold-bright:#E3B45E;
+    --gold-soft:#F4D999;
+    --gold-foil: linear-gradient(115deg, #8a6423 0%, #E3B45E 28%, #F7E3AE 45%, #C89644 62%, #8a6423 100%);
+    --rust:#7A3B2E;
+    --ink:#1C1712;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:auto;}
+  html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Manrope', sans-serif;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Lora', serif;
     overflow-x:hidden;
-    cursor:none;
-    transition: background .5s ease, color .5s ease;
   }
-  ::selection{ background:var(--brass); color:var(--void); }
-  a{color:inherit; text-decoration:none;}
-  .serif{ font-family:'Fraunces', serif; }
-  .mono{ font-family:'Space Mono', monospace; letter-spacing:0.04em; }
-
-  /* ---------- custom cursor ---------- */
-  .cursor-dot, .cursor-ring{
-    position:fixed; top:0; left:0; pointer-events:none; z-index:9999;
-    border-radius:50%; transform:translate(-50%,-50%);
+  .foil-bar{
+    height:4px;
+    background:linear-gradient(90deg, var(--forest-deep) 0%, var(--gold) 20%, var(--gold-soft) 50%, var(--gold) 80%, var(--forest-deep) 100%);
   }
-  .cursor-dot{ width:6px; height:6px; background:var(--brass); }
-  .cursor-ring{ width:34px; height:34px; border:1px solid var(--brass); opacity:0.6; transition: width .25s, height .25s, opacity .25s, border-color .25s; }
-  .cursor-ring.big{ width:64px; height:64px; opacity:0.9; background:rgba(198,161,91,0.08); }
-  @media (hover:none){ .cursor-dot,.cursor-ring{display:none;} body{cursor:auto;} }
+  ::selection{ background:var(--gold-bright); color:var(--forest-deep); }
 
-  /* ---------- loader ---------- */
-  #loader{
-    position:fixed; inset:0; background:var(--void); z-index:10000;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    font-size:.7rem;
+    font-weight:500;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 15% -10%, rgba(227,180,94,0.10), transparent 55%),
+      linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+    color:var(--ivory);
+    padding:4.5rem 6vw 6rem;
+    min-height:88vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    isolation:isolate;
+  }
+  .hero::before{
+    /* faint tree-line silhouette evoking Konni's forest reserve */
+    content:"";
+    position:absolute;
+    inset:auto 0 0 0;
+    height:120px;
+    background-repeat:repeat-x;
+    background-position:bottom;
+    background-size:340px 120px;
+    opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='120' viewBox='0 0 340 120'%3E%3Cg fill='%230E211C'%3E%3Cpath d='M20 120V70l-8-4 8-6-8-4 10-8 10 8-8 4 8 6-8 4v50z'/%3E%3Cpath d='M90 120V50l-14-8 14-10-14-8 18-14 18 14-14 8 14 10-14 8v70z'/%3E%3Cpath d='M180 120V60l-10-6 10-8-10-6 12-9 12 9-10 6 10 8-10 6v60z'/%3E%3Cpath d='M260 120V45l-16-9 16-11-16-9 20-16 20 16-16 9 16 11-16 9v75z'/%3E%3Cpath d='M320 120V75l-7-4 7-6-7-4 9-7 9 7-7 4 7 6-7 4v45z'/%3E%3C/g%3E%3C/svg%3E");
+    z-index:0;
+  }
+  .hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:1rem;
+    position:relative;
+    z-index:1;
+  }
+  .brandmark{
+    display:flex; align-items:center; gap:.6rem;
+    color:var(--gold-bright);
+  }
+  .brandmark .ring{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--gold-bright);
+    box-shadow:0 0 0 3px rgba(227,180,94,.18);
+  }
+  .hero-loc{ color:rgba(243,236,221,.55); text-align:right; }
+
+  .hero-main{ position:relative; z-index:1; margin-top:3.2rem; display:flex; align-items:flex-start; justify-content:space-between; gap:2.5rem; }
+  .hero-copy{ flex:1; min-width:0; }
+  .hero-name{
+    font-family:'Teko', sans-serif;
+    font-weight:600;
+    line-height:.85;
+    font-size:clamp(4.2rem, 13vw, 9.5rem);
+    letter-spacing:.01em;
+    text-transform:uppercase;
     color:var(--ivory);
   }
-  #loader .count{ font-family:'Fraunces', serif; font-style:italic; font-size:clamp(4rem,14vw,9rem); font-weight:400; line-height:1; }
-  #loader .tag{ margin-top:1.2rem; font-family:'Space Mono',monospace; letter-spacing:0.35em; font-size:0.7rem; text-transform:uppercase; color:var(--brass); }
-  #loader .frame{
-    position:absolute; inset:28px; border:1px solid rgba(198,161,91,0.35); pointer-events:none;
-  }
-  #loader .frame::before, #loader .frame::after{
-    content:""; position:absolute; width:14px; height:14px; border:1px solid var(--brass);
-  }
-  #loader .frame::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
-  #loader .frame::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
 
-  /* ---------- scroll progress ---------- */
-  #scroll-progress{
-    position:fixed; top:0; left:0; height:2px; background:var(--brass); z-index:9998; width:0%;
-    box-shadow:0 0 8px rgba(198,161,91,0.6);
+  /* ---------- PORTRAIT ---------- */
+  .portrait-wrap{
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.9rem;
   }
-
-  /* ---------- nav ---------- */
-  header{
-    position:fixed; top:0; left:0; right:0; z-index:500;
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 22px clamp(20px,5vw,64px);
-    mix-blend-mode:normal;
+  .portrait{
+    position:relative;
+    width:clamp(160px, 18vw, 230px);
+    aspect-ratio:1/1;
   }
-  .logo-mark{
-    width:42px;height:42px;border:1px solid var(--brass); border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces',serif; font-style:italic; font-size:1rem; color:var(--brass);
-    letter-spacing:0.02em;
+  .portrait::before{
+    content:"";
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    background:conic-gradient(from 180deg, #8a6423, #E3B45E, #F7E3AE, #C89644, #8a6423);
+    z-index:0;
   }
-  nav.desktop-nav{ display:flex; gap:2.2rem; }
-  nav.desktop-nav a{
-    font-family:'Space Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.14em;
-    color:var(--text-dim); position:relative; padding-bottom:4px;
+  .portrait-frame{
+    width:100%; height:100%;
+    border-radius:50%;
+    overflow:hidden;
+    background:linear-gradient(160deg, var(--ivory-dim), var(--ivory));
+    border:3px solid var(--ivory);
+    box-shadow:0 22px 44px rgba(0,0,0,.42), 0 0 0 1px rgba(227,180,94,.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    z-index:1;
   }
-  nav.desktop-nav a::after{
-    content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--brass); transition:width .35s ease;
-  }
-  nav.desktop-nav a:hover{ color:var(--ivory); }
-  nav.desktop-nav a:hover::after{ width:100%; }
-  #theme-toggle{
-    border:1px solid var(--border); background:transparent; color:var(--text);
-    font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase;
-    padding:8px 14px; border-radius:20px; cursor:none;
-  }
-  .nav-actions{ display:flex; align-items:center; gap:16px; }
-  .burger{ display:none; }
-  @media (max-width: 900px){
-    nav.desktop-nav{ display:none; }
-  }
-
-  section{ position:relative; }
-  .eyebrow{
-    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase;
-    color:var(--brass); display:flex; align-items:center; gap:14px; margin-bottom:1.4rem;
-  }
-  .eyebrow::before{ content:""; width:34px; height:1px; background:var(--brass); display:inline-block; }
-
-  .wrap{ max-width:1280px; margin:0 auto; padding-left:clamp(20px,5vw,64px); padding-right:clamp(20px,5vw,64px); }
-
-  /* ---------- hero ---------- */
-  #hero{
-    min-height:100svh; display:flex; align-items:flex-end; overflow:hidden;
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 18%, rgba(198,161,91,0.16), transparent 60%),
-      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(61,15,20,0.9), transparent 70%),
-      var(--void);
-  }
-  #hero .grain{
-    position:absolute; inset:0; opacity:0.05; mix-blend-mode:overlay; pointer-events:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  #hero .spotlight{
-    position:absolute; top:-10%; left:50%; width:120vw; height:140vh; transform:translateX(-50%);
-    background:conic-gradient(from 200deg at 50% 0%, transparent 0deg, rgba(198,161,91,0.10) 8deg, transparent 20deg);
+  .portrait-frame::before{
+    content:"";
+    position:absolute; inset:8px;
+    border:1px dashed rgba(227,180,94,.5);
+    border-radius:50%;
     pointer-events:none;
+    z-index:2;
   }
-  .hero-inner{ position:relative; width:100%; padding:120px clamp(20px,5vw,64px) 64px; z-index:2; }
-  .hero-kicker{ display:flex; align-items:center; gap:14px; margin-bottom:1.6rem; }
-  .hero-kicker .dot{ width:8px;height:8px;border-radius:50%; background:var(--ember); box-shadow:0 0 10px var(--ember); }
-  .hero-kicker span{ font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--ash); }
-  h1.hero-title{
-    font-family:'Fraunces', serif; font-weight:400; font-style:italic;
-    font-size:clamp(3.4rem, 10.5vw, 9.5rem); line-height:0.92; letter-spacing:-0.01em; color:var(--ivory);
+  .portrait-frame img{
+    width:100%; height:100%;
+    object-fit:cover;
+    position:absolute; inset:0;
+    z-index:2;
+  }
+  .portrait-mono{
+    font-family:'Teko', sans-serif;
+    font-size:3.2rem;
+    color:var(--forest-deep);
+    letter-spacing:.02em;
+    position:relative;
+    z-index:1;
+  }
+  .portrait-cap{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.62rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:rgba(243,236,221,.55);
+  }
+
+  .hero-name span{
+    background:var(--gold-foil);
+    background-size:200% 100%;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
   }
   .hero-roles{
-    margin-top:1.6rem; display:flex; flex-wrap:wrap; gap:0.5rem 1.4rem; max-width:760px;
-    font-family:'Manrope',sans-serif; font-size:clamp(0.85rem,1.3vw,1.05rem); color:var(--text-dim);
+    margin-top:1.1rem;
+    display:flex;
+    align-items:center;
+    gap:1rem;
   }
-  .hero-roles span{ position:relative; padding-left:1.1rem; }
-  .hero-roles span::before{ content:"—"; position:absolute; left:0; color:var(--brass); }
-  .hero-intro{ margin-top:2.2rem; max-width:520px; font-size:1.05rem; line-height:1.6; color:var(--text-dim); font-weight:300; }
-  .hero-cta{ margin-top:2.6rem; display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
-  .btn{
-    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
-    padding:16px 30px; border-radius:40px; display:inline-flex; align-items:center; gap:10px;
-    cursor:none; border:1px solid var(--brass); position:relative; overflow:hidden; white-space:nowrap;
+  .hero-roles .eyebrow{ color:rgba(243,236,221,.85); font-size:.85rem; }
+  .role-divider{ width:26px; height:1px; background:var(--gold); }
+
+  .hero-tagline{
+    max-width:640px;
+    margin-top:1.8rem;
+    font-size:1.05rem;
+    font-style:italic;
+    color:rgba(243,236,221,.78);
+    line-height:1.65;
+    border-left:2px solid var(--gold);
+    padding-left:1.1rem;
   }
-  .btn-primary{ background:var(--brass); color:var(--void); }
-  .btn-primary:hover{ background:transparent; color:var(--brass); }
-  .btn-ghost{ background:transparent; color:var(--ivory); border-color:var(--border); }
-  .btn-ghost:hover{ border-color:var(--brass); color:var(--brass); }
-  .btn span.play{ font-size:0.6rem; }
-  .scroll-cue{
-    position:absolute; right:clamp(20px,5vw,64px); bottom:40px; display:flex; flex-direction:column;
-    align-items:center; gap:10px; color:var(--ash); font-family:'Space Mono',monospace; font-size:0.65rem;
-    letter-spacing:0.2em; text-transform:uppercase;
+
+  .hero-bottom{
+    position:relative; z-index:1;
+    margin-top:3.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:2.4rem;
   }
-  .scroll-cue .line{ width:1px; height:60px; background:linear-gradient(var(--brass), transparent); position:relative; overflow:hidden; }
-  .scroll-cue .line::after{ content:""; position:absolute; top:-60px; left:0; width:100%; height:60px; background:var(--ivory); animation: dropline 2.2s ease-in-out infinite; }
-  @keyframes dropline{ to{ top:100%; } }
-
-  /* marquee ticker */
-  .marquee-wrap{ border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; padding:14px 0; background:var(--bg-card); }
-  .marquee-track{ display:flex; width:max-content; animation: scrollmarq 26s linear infinite; }
-  .marquee-track span{
-    font-family:'Fraunces',serif; font-style:italic; font-size:1.1rem; color:var(--text-dim); padding:0 2.4rem; white-space:nowrap;
-    display:flex; align-items:center; gap:2.4rem;
+  .stat{ min-width:120px; }
+  .stat .num{
+    font-family:'Teko', sans-serif;
+    font-size:2.6rem;
+    font-weight:600;
+    color:var(--gold-bright);
+    line-height:1;
   }
-  .marquee-track span::after{ content:"✦"; color:var(--brass); font-style:normal; font-size:0.8rem; }
-  @keyframes scrollmarq{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .stat .lbl{
+    margin-top:.3rem;
+    color:rgba(243,236,221,.6);
+  }
 
-  /* ---------- section titles ---------- */
-  .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-bottom:3.5rem; }
-  h2.big-title{ font-family:'Fraunces',serif; font-weight:400; font-size:clamp(2.2rem,5.2vw,4.2rem); line-height:1; letter-spacing:-0.01em; }
-  .section-num{ font-family:'Space Mono',monospace; font-size:0.8rem; color:var(--text-dim); text-align:right; }
+  /* perforated ticket edge transition */
+  .perf{
+    height:26px;
+    background:var(--forest-deep);
+    position:relative;
+    z-index:2;
+  }
+  .perf::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0;
+    height:26px;
+    background-image: radial-gradient(circle 8px, var(--ivory) 8px, transparent 8.5px);
+    background-size:34px 26px;
+    background-position: 0 13px;
+    background-repeat:repeat-x;
+  }
 
-  section.act{ padding: 130px 0; border-bottom:1px solid var(--border); }
+  /* ---------- SECTION LABEL ---------- */
+  .section{ padding:5.5rem 6vw; }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
+    margin-bottom:3rem;
+  }
+  .section-num{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--gold);
+    font-size:.85rem;
+  }
+  .section-title{
+    font-family:'Teko', sans-serif;
+    font-size:clamp(2.4rem, 5vw, 3.4rem);
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:.01em;
+    color:var(--forest-deep);
+  }
+  .section-rule{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, var(--rust), transparent);
+  }
 
-  /* ---------- about ---------- */
-  #about .about-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:4rem; align-items:start; }
-  @media(max-width:860px){ #about .about-grid{ grid-template-columns:1fr; } }
-  #about p.lead{ font-family:'Fraunces',serif; font-size:clamp(1.3rem,2.4vw,1.9rem); line-height:1.45; font-weight:400; color:var(--ivory); }
-  #about p.body-text{ margin-top:1.6rem; color:var(--text-dim); line-height:1.8; font-size:1rem; font-weight:300; max-width:60ch; }
-  .role-chips{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border); margin-top:2rem; }
-  .role-chips .row{ display:flex; align-items:center; justify-content:space-between; padding:1.1rem 0; border-bottom:1px solid var(--border); }
-  .role-chips .row .n{ font-family:'Space Mono',monospace; color:var(--brass); font-size:0.75rem; }
-  .role-chips .row .t{ font-family:'Fraunces',serif; font-size:1.15rem; font-style:italic; }
-  .role-chips .row:hover{ padding-left:10px; transition:.3s; }
-
-  /* ---------- filmography ---------- */
-  .film-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:2.4rem; }
-  @media(max-width:860px){ .film-grid{ grid-template-columns:1fr; } }
+  /* ---------- FILMOGRAPHY ---------- */
+  .reel{
+    position:relative;
+    padding-left:2.4rem;
+  }
+  .reel::before{
+    content:"";
+    position:absolute; left:7px; top:6px; bottom:6px; width:2px;
+    background-image:repeating-linear-gradient(to bottom, var(--rust) 0 6px, transparent 6px 13px);
+  }
+  .film{
+    position:relative;
+    display:grid;
+    grid-template-columns:96px 1fr;
+    gap:1.6rem;
+    align-items:stretch;
+    margin-bottom:1.4rem;
+  }
+  .film::before{
+    content:"";
+    position:absolute; left:-2.4rem; top:1.5rem;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--ivory);
+    border:2px solid var(--rust);
+  }
+  .film-year{
+    font-family:'Teko', sans-serif;
+    font-size:3.4rem;
+    font-weight:600;
+    color:var(--rust);
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--ivory-dim);
+    border-radius:4px;
+  }
   .film-card{
-    border:1px solid var(--border); border-radius: var(--radius); overflow:hidden; background:var(--bg-card);
-    display:flex; flex-direction:column;
+    position:relative;
+    background:#fff;
+    border:1px solid rgba(28,23,18,.08);
+    border-left:4px solid var(--forest);
+    padding:1.2rem 1.5rem;
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease, border-left-color .35s ease;
+    /* ticket-stub notches */
+    -webkit-mask-image:
+      radial-gradient(circle 7px at 0 50%, transparent 7px, #000 7.5px),
+      radial-gradient(circle 7px at 100% 50%, transparent 7px, #000 7.5px);
+    -webkit-mask-composite: source-in, source-in;
+    mask-composite: intersect;
   }
-  .film-poster{
-    aspect-ratio: 3/2; position:relative; overflow:hidden;
-    background: linear-gradient(155deg, var(--curtain), var(--void) 70%);
-    display:flex; align-items:center; justify-content:center;
+  .film-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 30px rgba(28,23,18,.14);
+    border-left-color:var(--rust);
   }
-  .film-poster .initials{ font-family:'Fraunces',serif; font-style:italic; font-size:3.6rem; color:rgba(198,161,91,0.35); }
-  .film-poster .reel-lines{ position:absolute; inset:0; background-image: repeating-linear-gradient(90deg, rgba(198,161,91,0.06) 0 2px, transparent 2px 40px); }
-  .film-poster .year-badge{
-    position:absolute; top:16px; left:16px; font-family:'Space Mono',monospace; font-size:0.72rem;
-    color:var(--brass); border:1px solid rgba(198,161,91,0.5); padding:4px 10px; border-radius:20px; background:rgba(10,9,8,0.4);
+  .film-title{
+    font-family:'Lora', serif;
+    font-weight:600;
+    font-size:1.25rem;
+    color:var(--ink);
   }
-  .film-body{ padding:1.8rem; display:flex; flex-direction:column; gap:0.9rem; flex:1; }
-  .film-body h3{ font-family:'Fraunces',serif; font-size:1.5rem; font-weight:500; }
-  .film-langs{ font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); }
-  .film-desc{ color:var(--text-dim); font-size:0.92rem; line-height:1.6; font-weight:300; }
-  .film-links{ margin-top:auto; display:flex; flex-wrap:wrap; gap:0.7rem; padding-top:0.6rem; }
+  .film-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--rust);
+  }
+  .film-lang{
+    font-size:.92rem;
+    color:#5c5348;
+  }
+  .film-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem 1.1rem;
+    margin-top:.5rem;
+  }
   .film-link{
-    font-family:'Space Mono',monospace; font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase;
-    border:1px solid var(--border); padding:8px 14px; border-radius:20px; display:inline-flex; gap:8px; align-items:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--rust);
+    text-decoration:none;
+    border-bottom:1px solid rgba(122,59,46,.35);
+    padding-bottom:1px;
   }
-  .film-link:hover{ border-color:var(--brass); color:var(--brass); }
+  .film-link:hover{ border-bottom-color:var(--rust); color:var(--forest-deep); }
+  .film-link::before{ content:"▶ "; font-size:.6rem; }
 
-  /* ---------- timeline (filmstrip) ---------- */
-  .filmstrip{ position:relative; padding-left:60px; }
-  .filmstrip::before{
-    content:""; position:absolute; left:20px; top:0; bottom:0; width:20px;
-    background-image:
-      repeating-linear-gradient(0deg, var(--brass) 0 6px, transparent 6px 26px);
-    -webkit-mask-image: linear-gradient(black,black);
-    opacity:0.55;
+  /* ---------- STAGE / MEGA SHOWS ---------- */
+  .stage-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
   }
-  .filmstrip::after{
-    content:""; position:absolute; left:29px; top:0; bottom:0; width:2px; background:var(--border);
+  .stage-card{
+    position:relative;
+    background:var(--forest-deep);
+    color:var(--ivory);
+    padding:2.4rem 1.6rem 1.8rem;
+    overflow:hidden;
+    isolation:isolate;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
   }
-  .tl-item{ position:relative; padding:0 0 4.2rem 40px; }
-  .tl-item:last-child{ padding-bottom:0; }
-  .tl-item .tl-dot{
-    position:absolute; left:24px; top:6px; width:13px; height:13px; border-radius:50%;
-    background:var(--void); border:2px solid var(--brass);
+  .stage-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 34px rgba(14,33,28,.4);
   }
-  .tl-item .tl-year{ font-family:'Space Mono',monospace; color:var(--brass); font-size:0.85rem; }
-  .tl-item h4{ font-family:'Fraunces',serif; font-style:italic; font-size:1.7rem; margin-top:0.3rem; font-weight:400; }
-  .tl-item p{ margin-top:0.5rem; color:var(--text-dim); font-size:0.92rem; max-width:46ch; font-weight:300; }
-
-  /* ---------- services ---------- */
-  .service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
-  @media(max-width:860px){ .service-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media(max-width:560px){ .service-grid{ grid-template-columns:1fr; } }
-  .service-card{ background:var(--bg); padding:2.6rem 2rem; transition:.35s ease; }
-  .service-card:hover{ background:var(--bg-card); }
-  .service-card .ic{ font-size:1.8rem; }
-  .service-card h4{ font-family:'Fraunces',serif; font-size:1.25rem; margin-top:1.2rem; font-weight:500; }
-  .service-card p{ margin-top:0.6rem; font-size:0.85rem; color:var(--text-dim); font-weight:300; line-height:1.6; }
-
-  /* ---------- gallery ---------- */
-  .filter-row{ display:flex; flex-wrap:wrap; gap:0.7rem; margin-bottom:2.6rem; }
-  .filter-btn{
-    font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase;
-    padding:9px 16px; border-radius:20px; border:1px solid var(--border); color:var(--text-dim);
+  .stage-card::before{
+    content:"";
+    position:absolute;
+    top:-40%; left:50%;
+    width:220px; height:220px;
+    transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(227,180,94,.5) 0%, rgba(227,180,94,.08) 45%, transparent 70%);
+    z-index:0;
+    transition:opacity .35s ease;
+    opacity:.75;
   }
-  .filter-btn.active, .filter-btn:hover{ border-color:var(--brass); color:var(--brass); }
-  .masonry{ column-count:3; column-gap:1.2rem; }
-  @media(max-width:900px){ .masonry{ column-count:2; } }
-  @media(max-width:560px){ .masonry{ column-count:1; } }
-  .g-item{ break-inside:avoid; margin-bottom:1.2rem; border-radius:var(--radius); overflow:hidden; position:relative; border:1px solid var(--border); cursor:none; }
-  .g-item .ph{
-    width:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.6rem;
-    background:linear-gradient(160deg, var(--curtain), var(--void)); color:var(--ash); padding:2.4rem 1rem;
+  .stage-card:hover::before{ opacity:1; }
+  .stage-card-inner{ position:relative; z-index:1; }
+  .stage-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.16em;
+    color:var(--gold-bright);
   }
-  .g-item .ph .tag{ font-family:'Space Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); }
-  .g-item .ph .ic{ font-size:1.6rem; }
-  .g-item::after{ content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.55), transparent 50%); opacity:0; transition:.3s; }
-  .g-item:hover::after{ opacity:1; }
-  .g-item .label{
-    position:absolute; bottom:14px; left:14px; font-family:'Space Mono',monospace; font-size:0.66rem;
-    letter-spacing:0.08em; text-transform:uppercase; opacity:0; transform:translateY(6px); transition:.3s; color:var(--ivory);
+  .stage-role{
+    font-family:'Teko', sans-serif;
+    font-size:2.1rem;
+    line-height:1.05;
+    text-transform:uppercase;
+    margin-top:.7rem;
+    color:var(--ivory);
   }
-  .g-item:hover .label{ opacity:1; transform:translateY(0); }
-
-  #lightbox{ position:fixed; inset:0; background:rgba(10,9,8,0.94); z-index:2000; display:none; align-items:center; justify-content:center; }
-  #lightbox .box{ max-width:640px; width:90%; background:var(--curtain-soft); border:1px solid var(--border); padding:3rem; text-align:center; }
-  #lightbox .close{ position:absolute; top:30px; right:clamp(20px,5vw,64px); font-family:'Space Mono',monospace; letter-spacing:0.1em; text-transform:uppercase; font-size:0.75rem; color:var(--ivory); }
-
-  /* ---------- achievements ---------- */
-  .stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
-  @media(max-width:860px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } }
-  .stat{ border-top:1px solid var(--border); padding-top:1.4rem; }
-  .stat .num{ font-family:'Fraunces',serif; font-style:italic; font-size:clamp(2.6rem,5vw,4rem); color:var(--brass); line-height:1; }
-  .stat .lbl{ margin-top:0.6rem; font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); }
-
-  /* ---------- konni varthakal ---------- */
-  #kv{ background: linear-gradient(180deg, var(--curtain-soft), var(--void)); }
-  .kv-panel{ border:1px solid var(--border); padding:clamp(2rem,5vw,4.5rem); position:relative; }
-  .kv-panel .mark{ font-family:'Fraunces',serif; font-style:italic; font-size:clamp(2.4rem,5vw,4rem); }
-  .kv-panel p{ max-width:65ch; margin-top:1.4rem; color:var(--text-dim); line-height:1.8; font-weight:300; }
-  .kv-socials{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.4rem; }
-  .kv-social{
-    display:flex; align-items:center; gap:10px; border:1px solid var(--border); padding:14px 22px; border-radius:40px;
-    font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
+  .stage-desc{
+    margin-top:.7rem;
+    font-size:.9rem;
+    color:rgba(243,236,221,.65);
+    line-height:1.55;
   }
-  .kv-social:hover{ border-color:var(--brass); color:var(--brass); }
 
-  /* personal social cards */
-  .social-cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
-  @media(max-width:700px){ .social-cards{ grid-template-columns:1fr; } }
-  .social-card{
-    border:1px solid var(--border); padding:2.2rem; display:flex; align-items:center; justify-content:space-between;
-    position:relative; overflow:hidden;
+  /* ---------- ALBUM ---------- */
+  .album-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.4rem;
   }
-  .social-card::before{
-    content:""; position:absolute; inset:0; background:var(--brass); transform:translateY(101%); transition:.4s ease; z-index:0;
+  .album-card{
+    background:#fff;
+    border:1px solid rgba(28,23,18,.08);
+    border-bottom:3px solid var(--rust);
+    transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease, border-bottom-color .35s ease;
   }
-  .social-card:hover::before{ transform:translateY(0); }
-  .social-card .sc-text{ position:relative; z-index:1; }
-  .social-card:hover .sc-text{ color:var(--void); }
-  .social-card .sc-name{ font-family:'Fraunces',serif; font-style:italic; font-size:1.4rem; }
-  .social-card .sc-handle{ font-family:'Space Mono',monospace; font-size:0.72rem; color:var(--text-dim); margin-top:0.3rem; }
-  .social-card:hover .sc-handle{ color:rgba(10,9,8,0.6); }
-  .social-card .arrow{ position:relative; z-index:1; font-size:1.4rem; transition:.3s; }
-  .social-card:hover .arrow{ transform:translate(6px,-6px); color:var(--void); }
+  .album-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 32px rgba(28,23,18,.16);
+    border-bottom-color:var(--gold);
+  }
+  .album-photo{
+    position:relative;
+    aspect-ratio:4/5;
+    background:var(--ivory-dim);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .album-mono{
+    font-family:'Teko', sans-serif;
+    font-size:2.6rem;
+    color:rgba(28,23,18,.25);
+    letter-spacing:.03em;
+    position:relative;
+    z-index:1;
+  }
+  .album-photo img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    z-index:2;
+    transition:transform .5s ease;
+  }
+  .album-card:hover .album-photo img{ transform:scale(1.06); }
+  .album-cap{
+    padding:.75rem .95rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.68rem;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--ink);
+    border-top:1px solid rgba(28,23,18,.08);
+  }
 
-  /* ---------- contact / finale ---------- */
-  #contact{ padding:150px 0 90px; text-align:center; position:relative; overflow:hidden; }
-  #contact .glow{ position:absolute; top:-20%; left:50%; transform:translateX(-50%); width:900px; height:600px; background:radial-gradient(ellipse, rgba(198,161,91,0.18), transparent 65%); pointer-events:none; }
-  #contact h2{ font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:clamp(2.4rem,7vw,6rem); line-height:1.05; max-width:16ch; margin:0 auto; position:relative; z-index:1; }
-  .contact-cta-row{ display:flex; justify-content:center; gap:1rem; margin-top:2.6rem; flex-wrap:wrap; position:relative; z-index:1; }
-  .contact-links{ display:flex; justify-content:center; gap:2rem; margin-top:3.4rem; flex-wrap:wrap; position:relative; z-index:1; }
-  .contact-links a{ font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); }
-  .contact-links a:hover{ color:var(--brass); }
+  /* ---------- CHANNEL / BROADCAST ---------- */
+  .broadcast{
+    background:var(--forest-deep);
+    color:var(--ivory);
+    position:relative;
+  }
+  .broadcast .section-title{ color:var(--ivory); }
+  .broadcast .section-rule{ background:linear-gradient(90deg, var(--gold), transparent); }
+  .broadcast .section-num{ color:var(--gold-bright); }
 
-  footer{ padding:2.4rem clamp(20px,5vw,64px); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-family:'Space Mono',monospace; font-size:0.66rem; color:var(--text-dim); letter-spacing:0.06em; text-transform:uppercase; }
+  .onair{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.2em;
+    color:#E4664F;
+    border:1px solid rgba(228,102,79,.5);
+    padding:.35rem .7rem;
+    border-radius:2px;
+    margin-bottom:1.4rem;
+  }
+  .onair .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:#E4664F;
+    box-shadow:0 0 8px #E4664F;
+    animation:pulse-dot 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-dot{
+    0%, 100%{ opacity:1; box-shadow:0 0 8px #E4664F; }
+    50%{ opacity:.45; box-shadow:0 0 2px #E4664F; }
+  }
 
-  .reveal{ opacity:0; transform:translateY(36px); }
+  .channel-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:3rem;
+    align-items:start;
+  }
+  .channel-name{
+    font-family:'Teko', sans-serif;
+    font-size:clamp(2.6rem,6vw,4.2rem);
+    text-transform:uppercase;
+    line-height:.95;
+    color:var(--ivory);
+  }
+  .channel-name em{ color:var(--gold-bright); font-style:normal; }
+  .channel-desc{
+    margin-top:1.1rem;
+    max-width:480px;
+    color:rgba(243,236,221,.75);
+    line-height:1.7;
+  }
+  .channel-role{
+    margin-top:1.4rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.75rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gold-bright);
+  }
+
+  .freq-list{ border-top:1px solid rgba(243,236,221,.15); }
+  .freq{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1.1rem 0;
+    border-bottom:1px solid rgba(243,236,221,.15);
+    text-decoration:none;
+    color:var(--ivory);
+    transition:padding-left .2s ease, color .2s ease;
+  }
+  .freq:hover{ padding-left:.5rem; color:var(--gold-bright); }
+  .freq-plat{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .freq-arrow{ opacity:.5; }
+
+  /* ---------- CONNECT / PERSONAL SOCIALS ---------- */
+  .connect{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+  }
+  .connect-card{
+    background:#fff;
+    border:1px solid rgba(28,23,18,.08);
+    padding:2rem 1.9rem;
+    transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease;
+  }
+  .connect-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 30px rgba(28,23,18,.14);
+  }
+  .connect-card .eyebrow{ color:var(--rust); }
+  .connect-card h3{
+    font-family:'Teko', sans-serif;
+    font-size:2rem;
+    text-transform:uppercase;
+    margin:.4rem 0 1.2rem;
+    color:var(--forest-deep);
+  }
+  .connect-link{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:.75rem 0;
+    border-top:1px solid rgba(28,23,18,.08);
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .connect-link:first-of-type{ border-top:none; }
+  .connect-link:hover .connect-plat{ color:var(--rust); }
+  .connect-plat{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    transition:color .2s ease;
+  }
+  .connect-arrow{ color:var(--gold); }
+
+  footer{
+    padding:2.4rem 6vw;
+    background:var(--forest-deep);
+    color:rgba(243,236,221,.45);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:.6rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.7rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+  }
+  .reveal.in-view{ opacity:1; transform:none; }
+  .reveal-group .reveal:nth-child(1){ transition-delay:.02s; }
+  .reveal-group .reveal:nth-child(2){ transition-delay:.09s; }
+  .reveal-group .reveal:nth-child(3){ transition-delay:.16s; }
+  .reveal-group .reveal:nth-child(4){ transition-delay:.23s; }
+  .reveal-group .reveal:nth-child(5){ transition-delay:.30s; }
+  .reveal-group .reveal:nth-child(6){ transition-delay:.37s; }
 
   @media (prefers-reduced-motion: reduce){
-    .marquee-track{ animation:none; }
-    .reveal{ opacity:1 !important; transform:none !important; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .onair .dot{ animation:none; }
+  }
+
+  @media (max-width:720px){
+    .channel-grid, .connect, .stage-grid{ grid-template-columns:1fr; }
+    .album-grid{ grid-template-columns:repeat(2, 1fr); }
+    .hero-main{ flex-direction:column-reverse; align-items:flex-start; gap:1.6rem; }
+    .portrait-wrap{ align-self:center; }
+    .film{ grid-template-columns:64px 1fr; gap:1rem; }
+    .film-year{ font-size:2rem; }
+    .hero{ padding:3rem 6vw 4rem; }
   }
 </style>
 </head>
 <body>
+  <div class="foil-bar"></div>
 
-<div id="loader">
-  <div class="frame"></div>
-  <div class="count mono">03</div>
-  <div class="tag">Konni Varthakal Presents</div>
-</div>
-
-<div id="scroll-progress"></div>
-<div class="cursor-dot"></div>
-<div class="cursor-ring"></div>
-
-<header>
-  <a href="#hero" class="logo-mark">JK</a>
-  <nav class="desktop-nav">
-    <a href="#about">About</a>
-    <a href="#filmography">Filmography</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#kv">Konni Varthakal</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button id="theme-toggle">Night</button>
-  </div>
-</header>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="grain"></div>
-  <div class="spotlight"></div>
-  <div class="hero-inner">
-    <div class="hero-kicker"><span class="dot"></span><span>Actor · Vlogger · Media Personality</span></div>
-    <h1 class="hero-title">Joby Konni</h1>
-    <div class="hero-roles">
-      <span>Actor</span>
-      <span>Vlogger</span>
-      <span>Mimicry Artist</span>
-      <span>Stage Programme Coordinator</span>
-      <span>Visual Editor</span>
-      <span>Founder, Konni Varthakal</span>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-top">
+      <div class="brandmark eyebrow"><span class="ring"></span> KONNI, KERALA</div>
+      <div class="hero-loc eyebrow">SCREEN &amp; BROADCAST<br>PORTFOLIO</div>
     </div>
-    <p class="hero-intro">I bring stories to life through cinema, stage performances, visual storytelling, and digital media.</p>
-    <div class="hero-cta">
-      <a href="https://youtu.be/BzKYeqjE8QI" target="_blank" class="btn btn-primary"><span class="play">▶</span> Watch Showreel</a>
-      <a href="#contact" class="btn btn-ghost">Book for Events</a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
-</section>
 
-<div class="marquee-wrap">
-  <div class="marquee-track mono">
-    <span>Stories. Performances. Moments that stay forever.</span>
-    <span>Stories. Performances. Moments that stay forever.</span>
-    <span>Stories. Performances. Moments that stay forever.</span>
-    <span>Stories. Performances. Moments that stay forever.</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="act" id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Act I — The Performer</div>
-        <h2 class="big-title reveal">About Joby</h2>
+    <div class="hero-main">
+      <div class="hero-copy">
+        <h1 class="hero-name">JOBY<br><span>KONNI</span></h1>
+        <div class="hero-roles">
+          <span class="eyebrow">ACTOR</span>
+          <span class="role-divider"></span>
+          <span class="eyebrow">VLOGGER</span>
+        </div>
+        <p class="hero-tagline">
+          From the forests of Konni to the screen, the stage and the stream — Joby Konni moves
+          between cinema, mega stage shows and community broadcast, acting across Malayalam, Tamil
+          and Hindi productions, performing mimicry and coordinating live programmes, while running
+          Konni Varthakal, a channel built on local voice and everyday storytelling.
+        </p>
       </div>
-      <div class="section-num">01 / 06</div>
-    </div>
-    <div class="about-grid">
-      <div>
-        <p class="lead reveal">From village stage programmes to the big screen — a journey built one performance at a time.</p>
-        <p class="body-text reveal">Joby Konni's story begins where most Kerala performers' stories begin: on a stage, in front of a live audience that forgives nothing and rewards everything. Years of mimicry shows and programme coordination sharpened an instinct for timing, character, and audience — instincts that carried directly onto film sets in Theekkuchiyum Panithulliyum, Ave Maria, Prekashante Metro, and Kalam Standard 5B.</p>
-        <p class="body-text reveal">Alongside acting, Joby edits his own visual work, runs a growing vlog, and founded Konni Varthakal — a local media platform built to give his community's stories a home online. Every role feeds the others: the stage informs the screen, the screen informs the edit, and the edit informs the newsroom.</p>
-      </div>
-      <div class="role-chips reveal">
-        <div class="row"><span class="n">01</span><span class="t">Actor</span></div>
-        <div class="row"><span class="n">02</span><span class="t">Vlogger</span></div>
-        <div class="row"><span class="n">03</span><span class="t">Mimicry Artist</span></div>
-        <div class="row"><span class="n">04</span><span class="t">Stage Programme Coordinator</span></div>
-        <div class="row"><span class="n">05</span><span class="t">Visual &amp; Video Editor</span></div>
-        <div class="row"><span class="n">06</span><span class="t">Founder, Konni Varthakal</span></div>
+
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <div class="portrait-frame">
+            <span class="portrait-mono">JK</span>
+            <!-- Replace src below with your photo file or link -->
+            <img src="https://raw.githubusercontent.com/jobyantony-star/jobyantony.github.io/refs/heads/main/media/joby-konni.jpeg" alt="Joby Konni" onerror="this.style.display='none'">
+          </div>
+        </div>
+        <span class="portrait-cap">Joby Konni</span>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- FILMOGRAPHY -->
-<section class="act" id="filmography">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Act II — On Screen</div>
-        <h2 class="big-title reveal">Filmography</h2>
-      </div>
-      <div class="section-num">02 / 06</div>
+    <div class="hero-bottom">
+      <div class="stat"><div class="num">4</div><div class="lbl eyebrow">Film Credits</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl eyebrow">Languages</div></div>
+      <div class="stat"><div class="num">2016–25</div><div class="lbl eyebrow">Active Years</div></div>
+      <div class="stat"><div class="num">01</div><div class="lbl eyebrow">Channel Founded</div></div>
+      <div class="stat"><div class="num">03</div><div class="lbl eyebrow">Stage Roles</div></div>
     </div>
-    <div class="film-grid">
+  </section>
+  <div class="perf"></div>
 
-      <div class="film-card reveal">
-        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2016</span><span class="initials">TP</span></div>
-        <div class="film-body">
-          <h3>Theekkuchiyum Panithulliyum</h3>
-          <div class="film-langs">Tamil · Malayalam</div>
-          <p class="film-desc">Joby's debut screen appearance, carrying the timing and warmth of years on stage into a new medium.</p>
+  <!-- ================= FILMOGRAPHY ================= -->
+  <section class="section" id="film">
+    <div class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Filmography</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="reel reveal-group">
+      <div class="film reveal">
+        <div class="film-year">16</div>
+        <div class="film-card">
+          <div class="film-meta">Feature Film · 2016</div>
+          <div class="film-title">Theekkuchiyum Panithulliyum</div>
+          <div class="film-lang">Tamil / Malayalam</div>
           <div class="film-links">
-            <a class="film-link" href="https://youtu.be/BzKYeqjE8QI?si=Hy2iPgJ5tLEiXtI3" target="_blank">▶ Watch Full Movie</a>
+            <a class="film-link" href="https://youtu.be/BzKYeqjE8QI?si=Hy2iPgJ5tLEiXtI3" target="_blank" rel="noopener">Full Movie</a>
           </div>
         </div>
       </div>
-
-      <div class="film-card reveal">
-        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2018</span><span class="initials">AM</span></div>
-        <div class="film-body">
-          <h3>Ave Maria</h3>
-          <div class="film-langs">Tamil · Malayalam</div>
-          <p class="film-desc">A quieter, character-driven role that showed a more restrained side of Joby's range.</p>
+      <div class="film reveal">
+        <div class="film-year">18</div>
+        <div class="film-card">
+          <div class="film-meta">Feature Film · 2018</div>
+          <div class="film-title">Ave Maria</div>
+          <div class="film-lang">Tamil / Malayalam</div>
+        </div>
+      </div>
+      <div class="film reveal">
+        <div class="film-year">19</div>
+        <div class="film-card">
+          <div class="film-meta">Feature Film · 2019</div>
+          <div class="film-title">Prekashante Metro</div>
+          <div class="film-lang">Malayalam</div>
           <div class="film-links">
-            <a class="film-link" href="https://youtu.be/4ZDsw6gb1S4?si=jpsLnliRZ8621iVg" target="_blank">▶ Watch Official Video</a>
+            <a class="film-link" href="https://youtu.be/CtQB-HY2KRI?si=dKh2YJXAwtGw1Q4w" target="_blank" rel="noopener">Trailer</a>
+            <a class="film-link" href="https://youtu.be/-7_Xl85M9QU?si=CtyahRBc2mzn0P3W" target="_blank" rel="noopener">Teaser</a>
           </div>
         </div>
       </div>
-
-      <div class="film-card reveal">
-        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2019</span><span class="initials">PM</span></div>
-        <div class="film-body">
-          <h3>Prekashante Metro</h3>
-          <div class="film-langs">Malayalam</div>
-          <p class="film-desc">A city-set feature that marked a step up in screen time and visibility.</p>
+      <div class="film reveal">
+        <div class="film-year">25</div>
+        <div class="film-card">
+          <div class="film-meta">Feature Film · 2025</div>
+          <div class="film-title">Kalam Standard 5B</div>
+          <div class="film-lang">Hindi / Malayalam / Tamil</div>
           <div class="film-links">
-            <a class="film-link" href="https://youtu.be/CtQB-HY2KRI?si=dKh2YJXAwtGw1Q4w" target="_blank">▶ Official Trailer</a>
-            <a class="film-link" href="https://youtu.be/-7_Xl85M9QU?si=CtyahRBc2mzn0P3W" target="_blank">▶ Official Teaser</a>
+            <a class="film-link" href="https://youtu.be/-3mJtEZY0k4?si=ljt3e2NJi8leMVLR" target="_blank" rel="noopener">Trailer</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="film-card reveal">
-        <div class="film-poster"><div class="reel-lines"></div><span class="year-badge mono">2025</span><span class="initials">K5B</span></div>
-        <div class="film-body">
-          <h3>Kalam Standard 5B</h3>
-          <div class="film-langs">Hindi · Malayalam · Tamil</div>
-          <p class="film-desc">Joby's most ambitious project yet, releasing across three languages.</p>
-          <div class="film-links">
-            <a class="film-link" href="https://youtu.be/-3mJtEZY0k4?si=ljt3e2NJi8leMVLR" target="_blank">▶ Official Trailer</a>
-          </div>
+  <!-- ================= STAGE / MEGA SHOWS ================= -->
+  <section class="section" id="stage">
+    <div class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Mega Shows — Stage Programmes</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="stage-grid reveal-group">
+      <div class="stage-card reveal">
+        <div class="stage-card-inner">
+          <div class="stage-num">ON STAGE</div>
+          <div class="stage-role">Mimicry<br>Artist</div>
+          <p class="stage-desc">Live voice and character mimicry performances across mega stage shows.</p>
         </div>
       </div>
-
+      <div class="stage-card reveal">
+        <div class="stage-card-inner">
+          <div class="stage-num">BACKSTAGE</div>
+          <div class="stage-role">Shows<br>Co-ordinator</div>
+          <p class="stage-desc">Planning and running stage programmes end to end, from line-up to execution.</p>
+        </div>
+      </div>
+      <div class="stage-card reveal">
+        <div class="stage-card-inner">
+          <div class="stage-num">POST</div>
+          <div class="stage-role">Visual &amp;<br>Editing</div>
+          <p class="stage-desc">Visual direction and editing for stage programme and show content.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- TIMELINE -->
-<section class="act" id="timeline">
-  <div class="wrap">
-    <div class="section-head">
+  <!-- ================= ALBUM ================= -->
+  <section class="section" id="album">
+    <div class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Album</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <!-- Add your photo files/links to each img src below -->
+    <div class="album-grid reveal-group">
+      <div class="album-card reveal">
+        <div class="album-photo">
+          <span class="album-mono">JK</span>
+          <img src="/media/photo-1.jpeg" alt="Joby Konni — On Set" onerror="this.style.display='none'">
+        </div>
+        <div class="album-cap">On Set</div>
+      </div>
+      <div class="album-card reveal">
+        <div class="album-photo">
+          <span class="album-mono">JK</span>
+          <img src="/media/photo-2.jpeg" alt="Joby Konni — Mega Show" onerror="this.style.display='none'">
+        </div>
+        <div class="album-cap">Mega Show</div>
+      </div>
+      <div class="album-card reveal">
+        <div class="album-photo">
+          <span class="album-mono">JK</span>
+          <img src="/media/photo-3.jpeg" alt="Joby Konni — Mimicry Act" onerror="this.style.display='none'">
+        </div>
+        <div class="album-cap">Mimicry Act</div>
+      </div>
+      <div class="album-card reveal">
+        <div class="album-photo">
+          <span class="album-mono">JK</span>
+          <img src="/media/photo-4.jpeg" alt="Joby Konni — Vlog Shoot" onerror="this.style.display='none'">
+        </div>
+        <div class="album-cap">Vlog Shoot</div>
+      </div>
+      <div class="album-card reveal">
+        <div class="album-photo">
+          <span class="album-mono">JK</span>
+          <img src="/media/photo-5.jpeg" alt="Joby Konni — Behind the Camera" onerror="this.style.display='none'">
+        </div>
+        <div class="album-cap">Behind the Camera</div>
+      </div>
+      <div class="album-card reveal">
+        <div class="album-photo">
+          <span class="album-mono">JK</span>
+          <img src="/media/photo-6.jpeg" alt="Joby Konni — Konni Varthakal" onerror="this.style.display='none'">
+        </div>
+        <div class="album-cap">Konni Varthakal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BROADCAST / CHANNEL ================= -->
+  <section class="section broadcast" id="channel">
+    <div class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Broadcast</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="channel-grid">
       <div>
-        <div class="eyebrow">Act III — The Reel</div>
-        <h2 class="big-title reveal">Experience Timeline</h2>
+        <span class="onair"><span class="dot"></span> ON AIR</span>
+        <div class="channel-name">KONNI<br><em>VARTHAKAL</em></div>
+        <p class="channel-desc">
+          A channel rooted in Konni — carrying local news, everyday stories and community voice
+          to viewers across Facebook, Instagram and YouTube.
+        </p>
+        <div class="channel-role">Founder &amp; Admin</div>
       </div>
-      <div class="section-num">03 / 06</div>
-    </div>
-    <div class="filmstrip">
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-year mono">2016</div>
-        <h4>Theekkuchiyum Panithulliyum</h4>
-        <p>Screen debut — Tamil &amp; Malayalam.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-year mono">2018</div>
-        <h4>Ave Maria</h4>
-        <p>A second feature, expanding range — Tamil &amp; Malayalam.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-year mono">2019</div>
-        <h4>Prekashante Metro</h4>
-        <p>A Malayalam feature with trailer and teaser released.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-year mono">2025</div>
-        <h4>Kalam Standard 5B</h4>
-        <p>A trilingual release — Hindi, Malayalam &amp; Tamil.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-year mono">Ongoing</div>
-        <h4>Founder &amp; Admin, Konni Varthakal</h4>
-        <p>Building a home for local news and community stories online.</p>
+
+      <div class="freq-list reveal-group">
+        <a class="freq reveal" href="https://www.facebook.com/share/1dLSZswdzh/" target="_blank" rel="noopener">
+          <span class="freq-plat">Facebook</span><span class="freq-arrow">↗</span>
+        </a>
+        <a class="freq reveal" href="https://www.instagram.com/konni_varthakal?igsh=aXF6Y3I5MjNxdW91" target="_blank" rel="noopener">
+          <span class="freq-plat">Instagram</span><span class="freq-arrow">↗</span>
+        </a>
+        <a class="freq reveal" href="https://youtube.com/@konnivarthakal?si=IC0aJrdpG9Lk4sd9" target="_blank" rel="noopener">
+          <span class="freq-plat">YouTube</span><span class="freq-arrow">↗</span>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SERVICES -->
-<section class="act" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Act IV — What I Offer</div>
-        <h2 class="big-title reveal">Services</h2>
+  <!-- ================= CONNECT ================= -->
+  <section class="section" id="connect">
+    <div class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Connect</h2>
+      <span class="section-rule"></span>
+    </div>
+
+    <div class="connect reveal-group">
+      <div class="connect-card reveal">
+        <div class="eyebrow">Personal</div>
+        <h3>Joby Konni</h3>
+        <a class="connect-link" href="https://www.facebook.com/share/1LrfWuYi3c/" target="_blank" rel="noopener">
+          <span class="connect-plat">Facebook</span><span class="connect-arrow">→</span>
+        </a>
+        <a class="connect-link" href="https://www.instagram.com/joby_konni?igsh=bG5id2owbncwNnhm" target="_blank" rel="noopener">
+          <span class="connect-plat">Instagram</span><span class="connect-arrow">→</span>
+        </a>
       </div>
-      <div class="section-num">04 / 06</div>
-    </div>
-  </div>
-  <div class="service-grid">
-    <div class="service-card reveal"><div class="ic">🎭</div><h4>Acting</h4><p>Feature films, shorts, and character roles across Malayalam, Tamil, and Hindi cinema.</p></div>
-    <div class="service-card reveal"><div class="ic">🎤</div><h4>Mimicry Shows</h4><p>Live mimicry and comic performances built for stage audiences.</p></div>
-    <div class="service-card reveal"><div class="ic">🎪</div><h4>Stage Programmes</h4><p>End-to-end coordination for cultural events and stage shows.</p></div>
-    <div class="service-card reveal"><div class="ic">🎬</div><h4>Visual Editing</h4><p>Video editing and post-production for film, vlog, and promotional work.</p></div>
-    <div class="service-card reveal"><div class="ic">📹</div><h4>Vlogging</h4><p>Behind-the-scenes and personal storytelling for digital audiences.</p></div>
-    <div class="service-card reveal"><div class="ic">📢</div><h4>Event Coordination</h4><p>Planning and hosting for community and cultural events.</p></div>
-    <div class="service-card reveal"><div class="ic">🎥</div><h4>Media Promotion</h4><p>Coverage and promotion through the Konni Varthakal platform.</p></div>
-  </div>
-</section>
 
-<!-- GALLERY -->
-<section class="act" id="gallery">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Act V — In Frame</div>
-        <h2 class="big-title reveal">Gallery</h2>
-      </div>
-      <div class="section-num">05 / 06</div>
-    </div>
-    <div class="filter-row">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="movies">Movies</button>
-      <button class="filter-btn" data-filter="stage">Stage Shows</button>
-      <button class="filter-btn" data-filter="bts">Behind the Scenes</button>
-      <button class="filter-btn" data-filter="celeb">Celebrity Moments</button>
-      <button class="filter-btn" data-filter="events">Events</button>
-      <button class="filter-btn" data-filter="media">Media Coverage</button>
-    </div>
-    <div class="masonry" id="masonry"></div>
-  </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="act" id="achievements">
-  <div class="wrap">
-    <div class="eyebrow">Act VI — By the Numbers</div>
-    <div class="stats-grid">
-      <div class="stat reveal"><div class="num" data-count="4">0</div><div class="lbl">Movies Worked</div></div>
-      <div class="stat reveal"><div class="num" data-count="150">0</div><div class="lbl">Stage Shows</div></div>
-      <div class="stat reveal"><div class="num" data-count="10">0</div><div class="lbl">Years of Experience</div></div>
-      <div class="stat reveal"><div class="num" data-count="500" data-suffix="K+">0</div><div class="lbl">Audience Reached</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- KONNI VARTHAKAL -->
-<section class="act" id="kv">
-  <div class="wrap">
-    <div class="eyebrow">The Encore</div>
-    <div class="kv-panel reveal">
-      <div class="mark">Konni Varthakal</div>
-      <p>Founder and Admin of one of the leading local digital media platforms — delivering news, updates, and community stories for the people of Konni and beyond.</p>
-      <div class="kv-socials">
-        <a class="kv-social" href="https://www.facebook.com/share/1dLSZswdzh/" target="_blank">Facebook →</a>
-        <a class="kv-social" href="https://www.instagram.com/konni_varthakal" target="_blank">Instagram →</a>
-        <a class="kv-social" href="https://youtube.com/@konnivarthakal" target="_blank">YouTube →</a>
+      <div class="connect-card reveal">
+        <div class="eyebrow">Channel</div>
+        <h3>Konni Varthakal</h3>
+        <a class="connect-link" href="https://www.facebook.com/share/1dLSZswdzh/" target="_blank" rel="noopener">
+          <span class="connect-plat">Facebook</span><span class="connect-arrow">→</span>
+        </a>
+        <a class="connect-link" href="https://www.instagram.com/konni_varthakal?igsh=aXF6Y3I5MjNxdW91" target="_blank" rel="noopener">
+          <span class="connect-plat">Instagram</span><span class="connect-arrow">→</span>
+        </a>
+        <a class="connect-link" href="https://youtube.com/@konnivarthakal?si=IC0aJrdpG9Lk4sd9" target="_blank" rel="noopener">
+          <span class="connect-plat">YouTube</span><span class="connect-arrow">→</span>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PERSONAL SOCIAL -->
-<section class="act" id="social">
-  <div class="wrap">
-    <div class="eyebrow">Follow Along</div>
-    <h2 class="big-title reveal" style="margin-bottom:2.4rem;">Joby, Off Stage</h2>
-    <div class="social-cards">
-      <a href="https://www.facebook.com/joby.konni" target="_blank" class="social-card reveal">
-        <div class="sc-text"><div class="sc-name">Facebook</div><div class="sc-handle">/joby.konni</div></div>
-        <div class="arrow">↗</div>
-      </a>
-      <a href="https://www.instagram.com/joby_konni" target="_blank" class="social-card reveal">
-        <div class="sc-text"><div class="sc-name">Instagram</div><div class="sc-handle">@joby_konni</div></div>
-        <div class="arrow">↗</div>
-      </a>
-    </div>
-  </div>
-</section>
+  <footer>
+    <span>Joby Konni — Actor / Vlogger</span>
+    <span>Konni, Pathanamthitta, Kerala</span>
+  </footer>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="glow"></div>
-  <div class="wrap">
-    <h2 class="reveal">Let's Create Something Memorable Together</h2>
-    <div class="contact-cta-row">
-      <a href="#" class="btn btn-primary">Book a Stage Show</a>
-      <a href="#" class="btn btn-ghost">Contact</a>
-    </div>
-    <div class="contact-links">
-      <a href="https://wa.me/" target="_blank">WhatsApp</a>
-      <a href="https://www.facebook.com/joby.konni" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/joby_konni" target="_blank">Instagram</a>
-      <a href="https://youtube.com/@konnivarthakal" target="_blank">YouTube</a>
-    </div>
-  </div>
-</section>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-<footer>
-  <span>© 2026 Joby Konni</span>
-  <span>Konni Varthakal · Actor · Vlogger · Mimicry Artist</span>
-</footer>
-
-<div id="lightbox">
-  <a class="close">Close ✕</a>
-  <div class="box">
-    <div class="mono" style="color:var(--brass); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;" id="lb-tag"></div>
-    <div class="serif" style="font-style:italic; font-size:1.8rem; margin-top:0.8rem;" id="lb-title"></div>
-    <p style="color:var(--text-dim); margin-top:0.8rem; font-size:0.9rem;">Replace this placeholder frame with the real photograph for this moment.</p>
-  </div>
-</div>
-
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-/* ---------- loader (film countdown) ---------- */
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  const count = loader.querySelector('.count');
-  const seq = ['03','02','01'];
-  let i = 0;
-  const tl = gsap.timeline({ onComplete:() => {
-    gsap.to(loader, { autoAlpha:0, duration:0.7, ease:'power2.inOut', onComplete:()=> loader.style.display='none' });
-    document.body.style.cursor = 'none';
-    revealHero();
-  }});
-  seq.forEach((n) => {
-    tl.call(()=>{ count.textContent = n; })
-      .fromTo(count, { opacity:0, scale:0.8 }, { opacity:1, scale:1, duration:0.35, ease:'power2.out' })
-      .to(count, { opacity:0, scale:1.15, duration:0.3, ease:'power2.in' }, '+=0.25');
-  });
-});
-
-function revealHero(){
-  gsap.timeline()
-    .from('.hero-kicker', { y:20, opacity:0, duration:0.6, ease:'power3.out' })
-    .from('.hero-title', { y:60, opacity:0, duration:0.9, ease:'power3.out' }, '-=0.35')
-    .from('.hero-roles span', { y:14, opacity:0, duration:0.5, stagger:0.05, ease:'power2.out' }, '-=0.5')
-    .from('.hero-intro', { y:14, opacity:0, duration:0.5 }, '-=0.3')
-    .from('.hero-cta .btn', { y:14, opacity:0, duration:0.5, stagger:0.1 }, '-=0.3');
-}
-
-/* ---------- smooth scroll (Lenis) ---------- */
-let lenis;
-try{
-  lenis = new Lenis({ duration:1.1, smoothWheel:true });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time)=>{ lenis.raf(time*1000); });
-  gsap.ticker.lagSmoothing(0);
-}catch(e){ /* fallback: native scroll */ }
-
-/* ---------- scroll progress ---------- */
-const progress = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const h = document.documentElement;
-  const pct = (h.scrollTop || document.body.scrollTop) / ((h.scrollHeight || document.body.scrollHeight) - h.clientHeight) * 100;
-  progress.style.width = pct + '%';
-});
-
-/* ---------- reveal animations ---------- */
-document.querySelectorAll('.reveal').forEach((el) => {
-  gsap.to(el, {
-    opacity:1, y:0, duration:0.9, ease:'power3.out',
-    scrollTrigger:{ trigger:el, start:'top 88%' }
-  });
-});
-
-/* ---------- custom cursor ---------- */
-const dot = document.querySelector('.cursor-dot');
-const ring = document.querySelector('.cursor-ring');
-window.addEventListener('mousemove', (e) => {
-  gsap.to(dot, { x:e.clientX, y:e.clientY, duration:0.05 });
-  gsap.to(ring, { x:e.clientX, y:e.clientY, duration:0.25, ease:'power2.out' });
-});
-document.querySelectorAll('a, button, .g-item').forEach((el) => {
-  el.addEventListener('mouseenter', () => ring.classList.add('big'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('big'));
-});
-
-/* ---------- magnetic buttons ---------- */
-document.querySelectorAll('.btn, .social-card').forEach((btn) => {
-  btn.addEventListener('mousemove', (e) => {
-    const r = btn.getBoundingClientRect();
-    const x = e.clientX - r.left - r.width/2;
-    const y = e.clientY - r.top - r.height/2;
-    gsap.to(btn, { x:x*0.18, y:y*0.3, duration:0.3, ease:'power2.out' });
-  });
-  btn.addEventListener('mouseleave', () => gsap.to(btn, { x:0, y:0, duration:0.4, ease:'elastic.out(1,0.4)' }));
-});
-
-/* ---------- theme toggle ---------- */
-const themeBtn = document.getElementById('theme-toggle');
-themeBtn.addEventListener('click', () => {
-  document.documentElement.classList.toggle('light');
-  themeBtn.textContent = document.documentElement.classList.contains('light') ? 'Day' : 'Night';
-});
-
-/* ---------- counters ---------- */
-document.querySelectorAll('.num').forEach((el) => {
-  const target = parseInt(el.dataset.count, 10);
-  const suffix = el.dataset.suffix || '+';
-  ScrollTrigger.create({
-    trigger: el, start:'top 90%', once:true,
-    onEnter: () => {
-      let obj = { val:0 };
-      gsap.to(obj, {
-        val: target, duration:1.6, ease:'power2.out',
-        onUpdate: () => { el.textContent = Math.floor(obj.val) + suffix; }
-      });
+      document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in-view'));
     }
-  });
-});
-
-/* ---------- gallery ---------- */
-const galleryData = [
-  { cat:'movies', icon:'🎬', label:'Theekkuchiyum Panithulliyum, 2016' },
-  { cat:'movies', icon:'🎬', label:'Ave Maria, 2018' },
-  { cat:'movies', icon:'🎬', label:'Prekashante Metro, 2019' },
-  { cat:'movies', icon:'🎬', label:'Kalam Standard 5B, 2025' },
-  { cat:'stage', icon:'🎤', label:'Mimicry Show, Live' },
-  { cat:'stage', icon:'🎪', label:'Stage Programme' },
-  { cat:'bts', icon:'🎥', label:'On Set' },
-  { cat:'bts', icon:'📹', label:'Editing Session' },
-  { cat:'celeb', icon:'✦', label:'With Fellow Artists' },
-  { cat:'events', icon:'📢', label:'Community Event' },
-  { cat:'events', icon:'🎪', label:'Cultural Programme' },
-  { cat:'media', icon:'📰', label:'Konni Varthakal Coverage' },
-];
-const heights = [220,280,240,300,260,230,310,250,270,240,290,260];
-const masonry = document.getElementById('masonry');
-galleryData.forEach((g, idx) => {
-  const div = document.createElement('div');
-  div.className = 'g-item';
-  div.dataset.cat = g.cat;
-  div.innerHTML = `<div class="ph" style="height:${heights[idx]}px;"><div class="ic">${g.icon}</div><div class="tag">${g.cat}</div></div><div class="label mono">${g.label}</div>`;
-  div.addEventListener('click', () => openLightbox(g));
-  masonry.appendChild(div);
-});
-document.querySelectorAll('.filter-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.g-item').forEach((item) => {
-      item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
-    });
-  });
-});
-const lightbox = document.getElementById('lightbox');
-function openLightbox(g){
-  document.getElementById('lb-tag').textContent = g.cat.toUpperCase();
-  document.getElementById('lb-title').textContent = g.label;
-  lightbox.style.display = 'flex';
-}
-document.querySelector('#lightbox .close').addEventListener('click', () => lightbox.style.display = 'none');
-lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.style.display = 'none'; });
-</script>
+  </script>
 </body>
 </html>
